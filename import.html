@@ -89,7 +89,7 @@
   </div>
 
   <div class="actions" id="actions" style="display: none;">
-    <button class="btn btn-secondary" onclick="downloadJSON()">💾 Download JSON</button>
+    <button class="btn btn-secondary" onclick="downloadJSON()">💾 Download FULL Bank</button>
     <button class="btn btn-green" onclick="saveToApp()">✅ Save to App</button>
   </div>
 
@@ -355,12 +355,23 @@ function showPreview() {
 function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
 function downloadJSON() {
-  const valid = parsedQuestions.filter(q => q.answer && Object.keys(q.options).length >= 2);
-  const blob = new Blob([JSON.stringify(valid, null, 2)], { type: 'application/json' });
+  // Download the FULL bank from localStorage, not just the last parsed PDF
+  let allQuestions = [];
+  const saved = localStorage.getItem('ceh-custom-questions');
+  if (saved) {
+    try { allQuestions = JSON.parse(saved); } catch(e) {}
+  }
+  if (allQuestions.length === 0) {
+    alert('Bank is empty. Save questions to the app first, then download.');
+    return;
+  }
+  allQuestions.forEach((q, i) => { q.id = i + 1; });
+  const blob = new Blob([JSON.stringify(allQuestions, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'flashcards.json'; a.click();
+  const a = document.createElement('a'); a.href = url; a.download = 'all-questions.json'; a.click();
   URL.revokeObjectURL(url);
-  log('Downloaded ' + valid.length + ' questions as JSON', 'success');
+  log('Downloaded FULL bank: ' + allQuestions.length + ' questions as all-questions.json', 'success');
+  log('Put this file in data/all-questions.json in your repo and git push to sync with phone.', 'info');
 }
 
 function saveToApp() {
