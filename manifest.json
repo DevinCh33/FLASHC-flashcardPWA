@@ -1,0 +1,22 @@
+{
+  "name": "CEH v11 Flashcards",
+  "short_name": "CEH Cards",
+  "description": "Flashcard study app for the Certified Ethical Hacker (CEH v11) exam",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

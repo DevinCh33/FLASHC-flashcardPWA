@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>CEH v11 Flashcards</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0f0f1a;
+      --card-bg: #1a1a2e;
+      --card-front: #16213e;
+      --accent: #0f3460;
+      --highlight: #e94560;
+      --text: #eee;
+      --text-dim: #8892b0;
+      --green: #64ffda;
+      --red: #ff6b6b;
+      --yellow: #ffd93d;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #e94560, #0f3460);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-stats {
+      display: flex;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .header-stats span { display: flex; align-items: center; gap: 4px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .dot-green { background: var(--green); }
+    .dot-red { background: var(--red); }
+    .dot-yellow { background: var(--yellow); }
+
+    /* ===== VIEWS ===== */
+    .view { display: none; }
+    .view.active { display: flex; flex-direction: column; min-height: calc(100vh - 53px); }
+
+    /* ===== HOME VIEW ===== */
+    #home-view { padding: 24px 16px; gap: 20px; }
+    .progress-ring-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    .progress-ring-wrapper { position: relative; }
+    .progress-ring-wrapper .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .center-text .big { font-size: 2rem; font-weight: 700; color: var(--green); }
+    .center-text .small { font-size: 0.75rem; color: var(--text-dim); }
+
+    .stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat-card .num { font-size: 1.5rem; font-weight: 700; }
+    .stat-card .label { font-size: 0.7rem; color: var(--text-dim); margin-top: 4px; }
+    .stat-card.mastered .num { color: var(--green); }
+    .stat-card.learning .num { color: var(--yellow); }
+    .stat-card.unseen .num { color: var(--text-dim); }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+      color: white;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: linear-gradient(135deg, #e94560, #c81d47); }
+    .btn-secondary { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); }
+    .btn-small { padding: 10px 16px; font-size: 0.85rem; }
+
+    .home-actions { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+
+    /* ===== STUDY VIEW ===== */
+    #study-view { padding: 0; }
+    .study-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .progress-bar-container {
+      flex: 1;
+      margin: 0 12px;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+    .card-count { font-size: 0.8rem; color: var(--text-dim); white-space: nowrap; }
+
+    .card-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      perspective: 1000px;
+    }
+
+    .flashcard {
+      width: 100%;
+      max-width: 500px;
+      min-height: 350px;
+      position: relative;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+    .flashcard.flipped { transform: rotateY(180deg); }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-front {
+      background: var(--card-front);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card-back {
+      background: var(--card-bg);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      transform: rotateY(180deg);
+    }
+
+    .card-badge {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(233, 69, 96, 0.15);
+      color: var(--highlight);
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+    .card-question {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .card-hint {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 16px;
+    }
+
+    .card-back .answer-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .option-item {
+      padding: 10px 14px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      background: rgba(255,255,255,0.03);
+    }
+    .option-item.correct {
+      background: rgba(100, 255, 218, 0.12);
+      border-left: 3px solid var(--green);
+      color: var(--green);
+    }
+    .option-item.incorrect {
+      color: var(--text-dim);
+    }
+
+    .answer-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      padding: 16px;
+    }
+    .answer-actions .btn {
+      padding: 14px 8px;
+      font-size: 0.8rem;
+      border-radius: 12px;
+    }
+    .btn-wrong { background: rgba(255, 107, 107, 0.15); color: var(--red); border: 1px solid rgba(255,107,107,0.3); }
+    .btn-hard { background: rgba(255, 217, 61, 0.15); color: var(--yellow); border: 1px solid rgba(255,217,61,0.3); }
+    .btn-easy { background: rgba(100, 255, 218, 0.15); color: var(--green); border: 1px solid rgba(100,255,218,0.3); }
+
+    /* ===== QUIZ VIEW ===== */
+    #quiz-view { padding: 0; }
+    .quiz-options { display: flex; flex-direction: column; gap: 8px; padding: 0 16px 16px; }
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      transition: border-color 0.2s, background 0.2s;
+      color: var(--text);
+    }
+    .quiz-option:hover { border-color: rgba(255,255,255,0.15); }
+    .quiz-option .opt-letter {
+      min-width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .quiz-option.selected { border-color: var(--highlight); background: rgba(233,69,96,0.08); }
+    .quiz-option.correct-answer { border-color: var(--green); background: rgba(100,255,218,0.08); }
+    .quiz-option.correct-answer .opt-letter { background: var(--green); color: #000; }
+    .quiz-option.wrong-answer { border-color: var(--red); background: rgba(255,107,107,0.08); }
+    .quiz-option.wrong-answer .opt-letter { background: var(--red); color: #fff; }
+    .quiz-option.disabled { pointer-events: none; opacity: 0.6; }
+    .quiz-option.disabled.correct-answer { opacity: 1; }
+
+    .quiz-next { padding: 12px 16px; }
+
+    /* ===== SETTINGS VIEW ===== */
+    #settings-view { padding: 24px 16px; gap: 16px; }
+    .settings-section h2 { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .settings-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .settings-item label { font-size: 0.9rem; }
+
+    /* Toggle Switch */
+    .toggle { position: relative; width: 48px; height: 28px; }
+    .toggle input { display: none; }
+    .toggle-slider {
+      position: absolute; inset: 0;
+      background: rgba(255,255,255,0.15);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-slider::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 22px; height: 22px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .toggle input:checked + .toggle-slider { background: var(--green); }
+    .toggle input:checked + .toggle-slider::after { transform: translateX(20px); }
+
+    .danger-zone { margin-top: auto; }
+    .btn-danger { background: rgba(255,107,107,0.12); color: var(--red); border: 1px solid rgba(255,107,107,0.2); }
+
+    /* ===== BOTTOM NAV ===== */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 15, 26, 0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+      z-index: 100;
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 0.65rem;
+      cursor: pointer;
+      padding: 4px 16px;
+      transition: color 0.2s;
+    }
+    .nav-item.active { color: var(--green); }
+    .nav-item svg { width: 22px; height: 22px; }
+
+    /* Spacing for bottom nav */
+    .view { padding-bottom: 70px !important; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+    /* Animations */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: slideUp 0.3s ease-out; }
+
+    /* Multi-select answers display */
+    .multi-answer-note {
+      font-size: 0.75rem;
+      color: var(--yellow);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>CEH v11 Flashcards</h1>
+    <div class="header-stats">
+      <span><span class="dot dot-green"></span> <span id="h-mastered">0</span></span>
+      <span><span class="dot dot-yellow"></span> <span id="h-learning">0</span></span>
+      <span><span class="dot dot-red"></span> <span id="h-unseen">0</span></span>
+    </div>
+  </div>
+
+  <!-- HOME VIEW -->
+  <div id="home-view" class="view active">
+    <div class="progress-ring-container">
+      <div class="progress-ring-wrapper">
+        <svg width="160" height="160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+          <circle id="progress-ring" cx="80" cy="80" r="70" fill="none" stroke="url(#grad)" stroke-width="8"
+            stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="440"
+            transform="rotate(-90 80 80)"/>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#64ffda"/>
+              <stop offset="100%" style="stop-color:#e94560"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="center-text">
+          <div class="big" id="pct">0%</div>
+          <div class="small">mastered</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card mastered">
+        <div class="num" id="s-mastered">0</div>
+        <div class="label">Mastered</div>
+      </div>
+      <div class="stat-card learning">
+        <div class="num" id="s-learning">0</div>
+        <div class="label">Learning</div>
+      </div>
+      <div class="stat-card unseen">
+        <div class="num" id="s-unseen">0</div>
+        <div class="label">Unseen</div>
+      </div>
+    </div>
+
+    <div class="home-actions">
+      <button class="btn btn-primary" onclick="startStudy('all')">📚 Study All Cards</button>
+      <button class="btn btn-secondary" onclick="startStudy('weak')">🔄 Review Weak Cards</button>
+      <button class="btn btn-secondary" onclick="startQuiz()">🎯 Quiz Mode (10 Random)</button>
+      <a href="import.html" class="btn btn-secondary" style="text-decoration:none; text-align:center;">📄 Import New PDF</a>
+    </div>
+  </div>
+
+  <!-- STUDY VIEW -->
+  <div id="study-view" class="view">
+    <div class="study-header">
+      <button class="back-btn" onclick="showView('home')">←</button>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="study-progress"></div>
+      </div>
+      <span class="card-count" id="study-count">1/117</span>
+    </div>
+
+    <div class="card-area" onclick="flipCard()">
+      <div class="flashcard" id="flashcard">
+        <div class="card-face card-front">
+          <span class="card-badge" id="card-badge">Question 1</span>
+          <div class="card-question" id="card-question"></div>
+          <div class="card-hint">Tap to reveal answer</div>
+        </div>
+        <div class="card-face card-back" id="card-back">
+          <div class="answer-label">✓ Correct Answer</div>
+          <div id="card-options"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="answer-actions" id="answer-actions" style="visibility: hidden;">
+      <button class="btn btn-wrong" onclick="rateCard(0)">❌ Wrong</button>
+      <button class="btn btn-hard" onclick="rateCard(1)">🤔 Hard</button>
+      <button class="btn btn-easy" onclick="rateCard(2)">✅ Easy</button>
+    </div>
+  </div>
+
+  <!-- QUIZ VIEW -->
+  <div id="quiz-view" class="view">
+    <div class="study-header">
+      <button class="back-btn" onclick="showView('home')">←</button>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="quiz-progress"></div>
+      </div>
+      <span class="card-count" id="quiz-count">1/10</span>
+    </div>
+
+    <div style="padding: 16px; flex: 1; overflow-y: auto;">
+      <div class="card-badge" id="quiz-badge">Question 1</div>
+      <div class="card-question" id="quiz-question" style="margin: 12px 0 20px; font-size: 0.95rem; line-height: 1.6;"></div>
+      <div id="quiz-multi-note"></div>
+      <div class="quiz-options" id="quiz-options" style="padding: 0;"></div>
+    </div>
+
+    <div class="quiz-next" id="quiz-next-area" style="display: none;">
+      <button class="btn btn-primary" onclick="nextQuizQuestion()" style="width: 100%;">Next →</button>
+    </div>
+
+    <div id="quiz-results" style="display: none; padding: 24px 16px; text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 12px;">🎯</div>
+      <div style="font-size: 1.5rem; font-weight: 700;" id="quiz-score"></div>
+      <div style="color: var(--text-dim); margin: 8px 0 24px;" id="quiz-score-sub"></div>
+      <button class="btn btn-primary" onclick="startQuiz()" style="width: 100%; margin-bottom: 10px;">Try Again</button>
+      <button class="btn btn-secondary" onclick="showView('home')" style="width: 100%;">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS VIEW -->
+  <div id="settings-view" class="view">
+    <div class="settings-section">
+      <h2>Study Options</h2>
+      <div class="settings-item">
+        <label>Shuffle cards</label>
+        <div class="toggle">
+          <input type="checkbox" id="opt-shuffle" checked>
+          <span class="toggle-slider" onclick="this.previousElementSibling.click(); saveSetting('shuffle', this.previousElementSibling.checked);"></span>
+        </div>
+      </div>
+      <div class="settings-item">
+        <label>Show question number</label>
+        <div class="toggle">
+          <input type="checkbox" id="opt-show-num" checked>
+          <span class="toggle-slider" onclick="this.previousElementSibling.click(); saveSetting('showNum', this.previousElementSibling.checked);"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Info</h2>
+      <div class="settings-item">
+        <label>Total questions</label>
+        <span id="total-q" style="color: var(--text-dim);">117</span>
+      </div>
+      <div class="settings-item">
+        <label>Exam</label>
+        <span style="color: var(--text-dim);">CEH v11 (312-50v11)</span>
+      </div>
+    </div>
+
+    <div class="danger-zone settings-section">
+      <h2>Data</h2>
+      <button class="btn btn-danger" onclick="resetProgress()" style="width: 100%;">🗑️ Reset All Progress</button>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <button class="nav-item active" onclick="showView('home')" data-view="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1-1v-4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1"/></svg>
+      Home
+    </button>
+    <button class="nav-item" onclick="startStudy('all')" data-view="study">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Study
+    </button>
+    <button class="nav-item" onclick="startQuiz()" data-view="quiz">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+      Quiz
+    </button>
+    <button class="nav-item" onclick="showView('settings')" data-view="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      Settings
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
