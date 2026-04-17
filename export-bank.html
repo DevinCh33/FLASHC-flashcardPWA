@@ -185,7 +185,20 @@ function mergeInto(newQuestions) {
   // Re-number all IDs cleanly
   bankQuestions.forEach(function(q, i) { q.id = i + 1; });
   localStorage.setItem('ceh-custom-questions', JSON.stringify(bankQuestions));
+  saveToDisk(bankQuestions);
   console.log('Merged: +' + added + ' new, total: ' + bankQuestions.length);
+}
+
+function saveToDisk(data) {
+  fetch('/api/save-bank', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(r) { return r.json(); }).then(function(d) {
+    if (d.ok) console.log('Written to disk:', d.count, 'questions');
+  }).catch(function() {
+    console.log('Local server not running, disk save skipped');
+  });
 }
 
 function normalize(text) {

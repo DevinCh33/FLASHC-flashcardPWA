@@ -398,6 +398,22 @@ function saveToApp() {
 
   localStorage.setItem('ceh-custom-questions', JSON.stringify(merged));
   log('Saved ' + valid.length + ' new questions (' + mode + '). Total in bank: ' + merged.length, 'success');
+
+  // Also write to disk via local server API
+  fetch('/api/save-bank', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(merged)
+  }).then(r => r.json()).then(data => {
+    if (data.ok) {
+      log('✅ Written to data/all-questions.json (' + data.count + ' questions). Just git push to sync!', 'success');
+    } else {
+      log('⚠️ Could not write to disk: ' + data.error + '. Use Download button instead.', 'warn');
+    }
+  }).catch(() => {
+    log('⚠️ Local server not running — file not saved to disk. Use "node server.js" or download manually.', 'warn');
+  });
+
   log('Go to the <a href="index.html">flashcard app</a> to study!', 'success');
   if (mode === 'replace') { localStorage.removeItem('ceh-progress'); log('Progress reset.', 'warn'); }
 
