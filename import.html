@@ -8,184 +8,48 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #0f0f1a;
-      --card-bg: #1a1a2e;
-      --accent: #0f3460;
-      --highlight: #e94560;
-      --text: #eee;
-      --text-dim: #8892b0;
-      --green: #64ffda;
-      --red: #ff6b6b;
-      --yellow: #ffd93d;
+      --bg: #0f0f1a; --card-bg: #1a1a2e; --accent: #0f3460;
+      --highlight: #e94560; --text: #eee; --text-dim: #8892b0;
+      --green: #64ffda; --red: #ff6b6b; --yellow: #ffd93d;
     }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 16px;
-    }
-    h1 {
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-      background: linear-gradient(135deg, #e94560, #0f3460);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 16px; }
+    h1 { font-size: 1.3rem; margin-bottom: 4px; background: linear-gradient(135deg, #e94560, #0f3460); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .subtitle { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 24px; }
     a { color: var(--green); }
-
-    /* Drop zone */
-    .drop-zone {
-      border: 2px dashed rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 48px 24px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      margin-bottom: 16px;
-    }
-    .drop-zone:hover, .drop-zone.dragover {
-      border-color: var(--green);
-      background: rgba(100, 255, 218, 0.03);
-    }
+    .drop-zone { border: 2px dashed rgba(255,255,255,0.15); border-radius: 16px; padding: 48px 24px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; margin-bottom: 16px; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: var(--green); background: rgba(100,255,218,0.03); }
     .drop-zone .icon { font-size: 3rem; margin-bottom: 12px; }
     .drop-zone .label { font-size: 0.95rem; margin-bottom: 4px; }
     .drop-zone .hint { font-size: 0.75rem; color: var(--text-dim); }
     .drop-zone input[type="file"] { display: none; }
-
-    /* Log area */
-    .log-area {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 16px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.8rem;
-      line-height: 1.6;
-      max-height: 200px;
-      overflow-y: auto;
-      margin-bottom: 16px;
-      display: none;
-    }
-    .log-area .info { color: var(--text-dim); }
-    .log-area .success { color: var(--green); }
-    .log-area .warn { color: var(--yellow); }
-    .log-area .error { color: var(--red); }
-
-    /* Preview */
-    .preview {
-      display: none;
-      margin-bottom: 16px;
-    }
-    .preview h2 {
-      font-size: 1rem;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .preview-count {
-      font-size: 0.8rem;
-      color: var(--green);
-      background: rgba(100,255,218,0.1);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .preview-list {
-      max-height: 400px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .preview-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 12px 14px;
-      border-left: 3px solid var(--accent);
-    }
-    .preview-card.has-error {
-      border-left-color: var(--red);
-    }
-    .preview-card .q-num {
-      font-size: 0.7rem;
-      color: var(--highlight);
-      margin-bottom: 4px;
-    }
-    .preview-card .q-text {
-      font-size: 0.82rem;
-      line-height: 1.5;
-      margin-bottom: 6px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .preview-card .q-meta {
-      font-size: 0.7rem;
-      color: var(--text-dim);
-    }
+    .log-area { background: var(--card-bg); border-radius: 12px; padding: 16px; font-family: 'Courier New', monospace; font-size: 0.8rem; line-height: 1.6; max-height: 200px; overflow-y: auto; margin-bottom: 16px; display: none; }
+    .log-area .info { color: var(--text-dim); } .log-area .success { color: var(--green); } .log-area .warn { color: var(--yellow); } .log-area .error { color: var(--red); }
+    .preview { display: none; margin-bottom: 16px; }
+    .preview h2 { font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+    .preview-count { font-size: 0.8rem; color: var(--green); background: rgba(100,255,218,0.1); padding: 4px 10px; border-radius: 20px; }
+    .preview-list { max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+    .preview-card { background: var(--card-bg); border-radius: 10px; padding: 12px 14px; border-left: 3px solid var(--accent); }
+    .preview-card.has-error { border-left-color: var(--red); }
+    .preview-card .q-num { font-size: 0.7rem; color: var(--highlight); margin-bottom: 4px; }
+    .preview-card .q-text { font-size: 0.82rem; line-height: 1.5; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .preview-card .q-meta { font-size: 0.7rem; color: var(--text-dim); }
     .preview-card .q-meta .answer { color: var(--green); font-weight: 600; }
-
-    /* Buttons */
-    .actions {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .btn {
-      flex: 1;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: white;
-      transition: transform 0.1s;
-    }
+    .actions { display: flex; gap: 10px; margin-bottom: 16px; }
+    .btn { flex: 1; padding: 14px; border: none; border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; color: white; transition: transform 0.1s; }
     .btn:active { transform: scale(0.97); }
-    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    .btn-primary { background: linear-gradient(135deg, #e94560, #c81d47); }
     .btn-secondary { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); }
     .btn-green { background: linear-gradient(135deg, #64ffda, #00b894); color: #000; }
-
-    /* Settings */
-    .parse-settings {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 16px;
-      display: none;
-    }
-    .parse-settings h3 {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .setting-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
+    .parse-settings { background: var(--card-bg); border-radius: 12px; padding: 16px; margin-bottom: 16px; display: none; }
+    .parse-settings h3 { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .setting-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
     .setting-row label { font-size: 0.85rem; }
-    .setting-row select, .setting-row input[type="text"] {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text);
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
+    .setting-row select, .setting-row input[type="text"] { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 0.8rem; }
+    .raw-text-area { background: #111; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.7rem; color: #888; max-height: 150px; overflow-y: auto; margin-bottom: 16px; white-space: pre-wrap; word-break: break-all; display: none; }
   </style>
 </head>
 <body>
-
   <h1>📄 Import Exam PDF</h1>
-  <p class="subtitle">Drop a cert exam dump PDF and it'll extract all Q&A into flashcards. <a href="index.html">← Back to app</a></p>
+  <p class="subtitle">Drop a cert exam dump PDF to extract flashcards. <a href="index.html">← Back to app</a></p>
 
   <div class="drop-zone" id="dropZone">
     <div class="icon">📎</div>
@@ -211,15 +75,16 @@
         <option value="append">Append to existing</option>
       </select>
     </div>
+    <div class="setting-row" style="justify-content:center;">
+      <span id="existingCount" style="font-size:0.78rem;color:var(--green);"></span>
+    </div>
   </div>
 
   <div class="log-area" id="logArea"></div>
+  <div class="raw-text-area" id="rawTextArea"></div>
 
   <div class="preview" id="preview">
-    <h2>
-      Parsed Questions
-      <span class="preview-count" id="previewCount">0 found</span>
-    </h2>
+    <h2>Parsed Questions <span class="preview-count" id="previewCount">0 found</span></h2>
     <div class="preview-list" id="previewList"></div>
   </div>
 
@@ -228,271 +93,306 @@
     <button class="btn btn-green" onclick="saveToApp()">✅ Save to App</button>
   </div>
 
-  <!-- pdf.js from CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+let parsedQuestions = [];
 
-    let parsedQuestions = [];
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click', () => fileInput.click());
 
-    // ===== DROP ZONE =====
-    const dropZone = document.getElementById('dropZone');
-    const fileInput = document.getElementById('fileInput');
+// Show existing question count and auto-select append if questions exist
+function updateExistingCount() {
+  const saved = localStorage.getItem('ceh-custom-questions');
+  let count = 0;
+  if (saved) { try { count = JSON.parse(saved).length; } catch(e) {} }
+  const el = document.getElementById('existingCount');
+  if (count > 0) {
+    el.textContent = '📦 ' + count + ' questions already in your bank';
+    document.getElementById('importMode').value = 'append';
+  } else {
+    el.textContent = '📦 Bank is empty — first import will create it';
+  }
+}
+updateExistingCount();
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+fileInput.addEventListener('change', e => { if (e.target.files.length) handleFile(e.target.files[0]); });
 
-    dropZone.addEventListener('click', () => fileInput.click());
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
-    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('dragover');
-      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-    });
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files.length) handleFile(e.target.files[0]);
-    });
+function log(msg, type = 'info') {
+  const area = document.getElementById('logArea');
+  area.style.display = 'block';
+  area.innerHTML += '<div class="' + type + '">' + msg + '</div>';
+  area.scrollTop = area.scrollHeight;
+}
 
-    // ===== LOGGING =====
-    function log(msg, type = 'info') {
-      const area = document.getElementById('logArea');
-      area.style.display = 'block';
-      area.innerHTML += `<div class="${type}">${msg}</div>`;
-      area.scrollTop = area.scrollHeight;
-    }
+async function handleFile(file) {
+  if (file.type !== 'application/pdf') { log('Not a PDF file.', 'error'); return; }
+  document.getElementById('logArea').innerHTML = '';
+  document.getElementById('parseSettings').style.display = 'block';
+  log('Loading: ' + file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB)', 'info');
 
-    // ===== MAIN PIPELINE =====
-    async function handleFile(file) {
-      if (file.type !== 'application/pdf') {
-        log('Not a PDF file. Please drop a .pdf', 'error');
-        return;
-      }
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    log('PDF loaded: ' + pdf.numPages + ' pages', 'success');
 
-      document.getElementById('logArea').innerHTML = '';
-      document.getElementById('parseSettings').style.display = 'block';
-      log(`Loading: ${file.name} (${(file.size / 1024).toFixed(0)} KB)`, 'info');
-
-      try {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-        log(`PDF loaded: ${pdf.numPages} pages`, 'success');
-
-        // Extract all text
-        let fullText = '';
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const content = await page.getTextContent();
-          const pageText = content.items.map(item => item.str).join(' ');
-          fullText += pageText + '\n';
-        }
-
-        log(`Extracted ${fullText.length} characters of text`, 'info');
-
-        // Parse
-        const questionMarker = document.getElementById('questionMarker').value;
-        const answerMarker = document.getElementById('answerMarker').value;
-        parsedQuestions = parseExamText(fullText, questionMarker, answerMarker);
-
-        log(`Parsed ${parsedQuestions.length} questions`, 'success');
-
-        if (parsedQuestions.length === 0) {
-          log('No questions found. Try adjusting the question/answer markers above.', 'warn');
-        } else {
-          const withAnswers = parsedQuestions.filter(q => q.answer);
-          const withOptions = parsedQuestions.filter(q => Object.keys(q.options).length > 0);
-          log(`  → ${withOptions.length} have options, ${withAnswers.length} have answers`, 'info');
-
-          const incomplete = parsedQuestions.filter(q => !q.answer || Object.keys(q.options).length < 2);
-          if (incomplete.length > 0) {
-            log(`  → ${incomplete.length} questions may be incomplete (missing answer or <2 options)`, 'warn');
-          }
-        }
-
-        showPreview();
-
-      } catch (err) {
-        log(`Error: ${err.message}`, 'error');
-        console.error(err);
-      }
-    }
-
-    // ===== PARSER =====
-    function parseExamText(text, questionMarker, answerMarker) {
-      const questions = [];
-
-      // Normalize whitespace but keep newlines meaningful
-      text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-
-      // Split by question marker
-      // Pattern: "NEW QUESTION" followed by optional whitespace and a number
-      const markerRegex = new RegExp(questionMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*\\d*', 'gi');
-      const parts = text.split(markerRegex);
-
-      // Skip the first part (before the first question)
-      for (let i = 1; i < parts.length; i++) {
-        const block = parts[i].trim();
-        if (!block) continue;
-
-        const q = parseQuestionBlock(block, answerMarker);
-        if (q) {
-          q.id = questions.length + 1;
-          questions.push(q);
-        }
-      }
-
-      return questions;
-    }
-
-    function parseQuestionBlock(block, answerMarker) {
-      // Find the answer line
-      const answerRegex = new RegExp(answerMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*([A-G]+)', 'i');
-      const answerMatch = block.match(answerRegex);
-
-      let answer = '';
-      let bodyText = block;
-
-      if (answerMatch) {
-        answer = answerMatch[1].toUpperCase();
-        // Remove everything from the answer line onward
-        bodyText = block.substring(0, answerMatch.index).trim();
-      }
-
-      // Extract options: lines starting with A. B. C. etc.
-      // We need to find option patterns: single letter followed by a dot/period
-      const options = {};
-      const optionRegex = /(?:^|\n)\s*([A-G])\.\s+/g;
-      const optionMatches = [...bodyText.matchAll(optionRegex)];
-
-      let questionText = bodyText;
-
-      if (optionMatches.length >= 2) {
-        // Question text is everything before the first option
-        questionText = bodyText.substring(0, optionMatches[0].index).trim();
-
-        // Extract each option's text
-        for (let j = 0; j < optionMatches.length; j++) {
-          const letter = optionMatches[j][1];
-          const start = optionMatches[j].index + optionMatches[j][0].length;
-          const end = j + 1 < optionMatches.length ? optionMatches[j + 1].index : bodyText.length;
-          let optText = bodyText.substring(start, end).trim();
-
-          // Clean up: remove trailing noise (page footers, headers, etc.)
-          optText = cleanText(optText);
-          if (optText) {
-            options[letter] = optText;
-          }
-        }
-      }
-
-      // Clean question text
-      questionText = cleanText(questionText);
-
-      // Skip if question is too short or empty
-      if (!questionText || questionText.length < 10) return null;
-
-      return {
-        id: 0,
-        question: questionText,
-        options: options,
-        answer: answer
-      };
-    }
-
-    function cleanText(text) {
-      if (!text) return '';
-
-      // Remove common PDF noise patterns
-      const noisePatterns = [
-        /The Leader of IT Certification.*$/gim,
-        /visit\s*-?\s*https?:\/\/www\.certleader\.com/gi,
-        /100% Valid and Newest Version.*$/gim,
-        /https?:\/\/www\.certleader\.com\/[^\s]*/gi,
-        /\(\d+ Q&As\)/gi,
-        /Powered by TCPDF.*$/gim,
-      ];
-
-      noisePatterns.forEach(p => { text = text.replace(p, ''); });
-
-      // Collapse multiple spaces/newlines
-      text = text.replace(/\s+/g, ' ').trim();
-
-      return text;
-    }
-
-    // ===== PREVIEW =====
-    function showPreview() {
-      const preview = document.getElementById('preview');
-      const list = document.getElementById('previewList');
-      const count = document.getElementById('previewCount');
-
-      preview.style.display = 'block';
-      count.textContent = `${parsedQuestions.length} found`;
-      list.innerHTML = '';
-
-      parsedQuestions.forEach((q, idx) => {
-        const optCount = Object.keys(q.options).length;
-        const hasError = !q.answer || optCount < 2;
-
-        const card = document.createElement('div');
-        card.className = 'preview-card' + (hasError ? ' has-error' : '');
-        card.innerHTML = `
-          <div class="q-num">Q${q.id}${hasError ? ' ⚠️ incomplete' : ''}</div>
-          <div class="q-text">${escapeHtml(q.question)}</div>
-          <div class="q-meta">
-            ${optCount} options · Answer: <span class="answer">${q.answer || '???'}</span>
-          </div>
-        `;
-        list.appendChild(card);
+    // Extract text preserving line structure using Y-coordinate grouping
+    let fullText = '';
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const lines = {};
+      content.items.forEach(item => {
+        if (!item.str || !item.str.trim()) return;
+        const y = Math.round(item.transform[5]);
+        const x = item.transform[4];
+        if (!lines[y]) lines[y] = [];
+        lines[y].push({ x: x, text: item.str });
       });
-
-      if (parsedQuestions.length > 0) {
-        document.getElementById('actions').style.display = 'flex';
+      const sortedYs = Object.keys(lines).map(Number).sort((a, b) => b - a);
+      for (const y of sortedYs) {
+        const lineItems = lines[y].sort((a, b) => a.x - b.x);
+        fullText += lineItems.map(it => it.text).join(' ').trim() + '\n';
       }
+      fullText += '\n';
     }
 
-    function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
+    log('Extracted ' + fullText.length + ' characters', 'info');
+
+    // Show raw text snippet for debugging
+    const rawArea = document.getElementById('rawTextArea');
+    rawArea.style.display = 'block';
+    rawArea.textContent = 'RAW TEXT (first 2000 chars):\n\n' + fullText.substring(0, 2000);
+
+    // Parse
+    const questionMarker = document.getElementById('questionMarker').value;
+    const answerMarker = document.getElementById('answerMarker').value;
+    parsedQuestions = parseExamText(fullText, questionMarker, answerMarker);
+
+    log('Parsed ' + parsedQuestions.length + ' questions', 'success');
+    if (parsedQuestions.length === 0) {
+      log('No questions found. Try adjusting markers above.', 'warn');
+    } else {
+      const withOptions = parsedQuestions.filter(q => Object.keys(q.options).length >= 2);
+      const withAnswers = parsedQuestions.filter(q => q.answer);
+      log('  → ' + withOptions.length + ' have options, ' + withAnswers.length + ' have answers', 'info');
+      const incomplete = parsedQuestions.filter(q => !q.answer || Object.keys(q.options).length < 2);
+      if (incomplete.length > 0) log('  → ' + incomplete.length + ' may be incomplete', 'warn');
     }
+    showPreview();
+  } catch (err) {
+    log('Error: ' + err.message, 'error');
+    console.error(err);
+  }
+}
 
-    // ===== EXPORT / SAVE =====
-    function downloadJSON() {
-      const valid = parsedQuestions.filter(q => q.answer && Object.keys(q.options).length >= 2);
-      const blob = new Blob([JSON.stringify(valid, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'flashcards.json';
-      a.click();
-      URL.revokeObjectURL(url);
-      log(`Downloaded ${valid.length} questions as JSON`, 'success');
+function parseExamText(text, questionMarker, answerMarker) {
+  const questions = [];
+  text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  const escaped = questionMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const markerRegex = new RegExp(escaped + '\\s*\\d*', 'gi');
+  const parts = text.split(markerRegex);
+
+  for (let i = 1; i < parts.length; i++) {
+    const block = parts[i].trim();
+    if (!block) continue;
+    const q = parseQuestionBlock(block, answerMarker);
+    if (q) { q.id = questions.length + 1; questions.push(q); }
+  }
+  return questions;
+}
+
+function parseQuestionBlock(block, answerMarker) {
+  // Strip leading topic markers like "- (Topic 1)"
+  block = block.replace(/^\s*-\s*\(Topic\s*\d+\)\s*/i, "");
+
+  // Find answer
+  const escaped = answerMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const answerRegex = new RegExp(escaped + '\\s*:?\\s*([A-G]+)', 'i');
+  const answerMatch = block.match(answerRegex);
+
+  let answer = '';
+  let bodyText = block;
+  if (answerMatch) {
+    answer = answerMatch[1].toUpperCase();
+    bodyText = block.substring(0, answerMatch.index).trim();
+  }
+
+  // Try to find options using multiple strategies
+  const options = {};
+  let questionText = bodyText;
+
+  // Strategy 1: Options on their own line (most reliable)
+  //   Matches lines like "A. some text" or "A.  some text"
+  let optionMatches = findOptionsOnLines(bodyText);
+
+  // Strategy 2: If that failed, try inline — " A. " pattern
+  //   PDF text sometimes puts everything on one line
+  if (optionMatches.length < 2) {
+    optionMatches = findOptionsInline(bodyText);
+  }
+
+  if (optionMatches.length >= 2) {
+    questionText = bodyText.substring(0, optionMatches[0].index).trim();
+    for (let j = 0; j < optionMatches.length; j++) {
+      const letter = optionMatches[j].letter;
+      const start = optionMatches[j].index + optionMatches[j].length;
+      const end = j + 1 < optionMatches.length ? optionMatches[j + 1].index : bodyText.length;
+      let optText = bodyText.substring(start, end).trim();
+      optText = cleanText(optText);
+      if (optText) options[letter] = optText;
     }
+  }
 
-    function saveToApp() {
-      const valid = parsedQuestions.filter(q => q.answer && Object.keys(q.options).length >= 2);
-      const mode = document.getElementById('importMode').value;
+  questionText = cleanText(questionText);
+  if (!questionText || questionText.length < 10) return null;
+  return { id: 0, question: questionText, options: options, answer: answer };
+}
 
-      let existing = [];
-      if (mode === 'append') {
-        const saved = localStorage.getItem('ceh-custom-questions');
-        if (saved) existing = JSON.parse(saved);
-      }
+function findOptionsOnLines(text) {
+  // Match: start of line, optional whitespace, single capital A-G, dot, space(s)
+  const regex = /^[ \t]*([A-G])\.[ \t]+/gm;
+  const results = [];
+  let m;
+  while ((m = regex.exec(text)) !== null) {
+    results.push({ letter: m[1], index: m.index, length: m[0].length });
+  }
+  // Validate: must start with A and be roughly sequential
+  return filterSequential(results);
+}
 
-      // Re-number IDs
-      const startId = mode === 'append' ? (existing.length > 0 ? Math.max(...existing.map(q => q.id)) + 1 : 1) : 1;
-      valid.forEach((q, i) => { q.id = startId + i; });
+function findOptionsInline(text) {
+  // For inline text where options aren't on separate lines
+  // Match: whitespace or start, then A. B. C. etc.
+  // Be careful not to match things like "U.S." or "e.g."
+  const regex = /(?:^|[ \t])([A-G])\.[ \t]+/g;
+  const results = [];
+  let m;
+  while ((m = regex.exec(text)) !== null) {
+    // Adjust index if we matched a leading space
+    const offset = m[0].indexOf(m[1]);
+    results.push({
+      letter: m[1],
+      index: m.index + offset,
+      length: m[0].length - offset
+    });
+  }
+  return filterSequential(results);
+}
 
-      const merged = mode === 'append' ? [...existing, ...valid] : valid;
+function filterSequential(matches) {
+  if (matches.length < 2) return matches;
 
-      localStorage.setItem('ceh-custom-questions', JSON.stringify(merged));
-      log(`Saved ${valid.length} questions to app (${mode} mode). Total: ${merged.length}`, 'success');
-      log(`Go to the <a href="index.html">flashcard app</a> to study!`, 'success');
+  // Find first 'A' and collect the sequential run A, B, C, D...
+  const aIdx = matches.findIndex(m => m.letter === 'A');
+  if (aIdx === -1) return [];
 
-      // Also clear progress if replacing
-      if (mode === 'replace') {
-        localStorage.removeItem('ceh-progress');
-        log('Progress reset (replace mode).', 'warn');
-      }
+  const result = [matches[aIdx]];
+  const expected = 'BCDEFG';
+  let nextIdx = 0;
+
+  for (let i = aIdx + 1; i < matches.length; i++) {
+    if (nextIdx < expected.length && matches[i].letter === expected[nextIdx]) {
+      result.push(matches[i]);
+      nextIdx++;
+    } else if (matches[i].letter === 'A') {
+      break; // new question's options bleeding in
     }
+  }
+  return result.length >= 2 ? result : [];
+}
+
+function cleanText(text) {
+  if (!text) return '';
+  const noise = [
+    // CertLeader patterns
+    /The Leader of IT Certification.*$/gim,
+    /visit\s*-?\s*https?:\/\/www\.certleader\.com/gi,
+    /100% Valid and Newest Version.*$/gim,
+    /https?:\/\/www\.certleader\.com\/[^\s]*/gi,
+    // SurePassExam patterns
+    /Recommend!!\s*Get the Full.*$/gim,
+    /Passing Certification Exams Made Easy.*$/gim,
+    /visit\s*-?\s*https?:\/\/www\.surepassexam\.com/gi,
+    /https?:\/\/www\.surepassexam\.com\/[^\s]*/gi,
+    // Generic patterns
+    /\(\d+\s*(?:New\s*)?Q(?:uestions|&As?)?\)/gi,
+    /Powered by TCPDF.*$/gim,
+    // Topic markers (e.g. "- (Topic 1)")
+    /^-\s*\(Topic\s*\d+\)\s*/gim,
+    // Explanation blocks that might leak into question text
+    /Explanation:\s*$/gim,
+  ];
+  noise.forEach(p => { text = text.replace(p, ''); });
+  text = text.replace(/\s+/g, ' ').trim();
+  return text;
+}
+
+function showPreview() {
+  const preview = document.getElementById('preview');
+  const list = document.getElementById('previewList');
+  preview.style.display = 'block';
+  document.getElementById('previewCount').textContent = parsedQuestions.length + ' found';
+  list.innerHTML = '';
+  parsedQuestions.forEach(q => {
+    const optCount = Object.keys(q.options).length;
+    const hasError = !q.answer || optCount < 2;
+    const card = document.createElement('div');
+    card.className = 'preview-card' + (hasError ? ' has-error' : '');
+    card.innerHTML =
+      '<div class="q-num">Q' + q.id + (hasError ? ' ⚠️ incomplete' : '') + '</div>' +
+      '<div class="q-text">' + escapeHtml(q.question) + '</div>' +
+      '<div class="q-meta">' + optCount + ' options · Answer: <span class="answer">' + (q.answer || '???') + '</span></div>';
+    list.appendChild(card);
+  });
+  if (parsedQuestions.length > 0) document.getElementById('actions').style.display = 'flex';
+}
+
+function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function downloadJSON() {
+  const valid = parsedQuestions.filter(q => q.answer && Object.keys(q.options).length >= 2);
+  const blob = new Blob([JSON.stringify(valid, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'flashcards.json'; a.click();
+  URL.revokeObjectURL(url);
+  log('Downloaded ' + valid.length + ' questions as JSON', 'success');
+}
+
+function saveToApp() {
+  const valid = parsedQuestions.filter(q => q.answer && Object.keys(q.options).length >= 2);
+  const mode = document.getElementById('importMode').value;
+
+  let existing = [];
+  const saved = localStorage.getItem('ceh-custom-questions');
+  if (saved) {
+    try { existing = JSON.parse(saved); } catch(e) { existing = []; }
+  }
+
+  // Warn if replacing and there are existing questions
+  if (mode === 'replace' && existing.length > 0) {
+    if (!confirm('This will REPLACE your existing ' + existing.length + ' questions. Continue?\n\nChoose "Append" in the dropdown to add instead.')) {
+      return;
+    }
+  }
+
+  const base = mode === 'append' ? existing : [];
+  const startId = base.length > 0 ? Math.max(...base.map(q => q.id)) + 1 : 1;
+  valid.forEach((q, i) => { q.id = startId + i; });
+  const merged = [...base, ...valid];
+
+  localStorage.setItem('ceh-custom-questions', JSON.stringify(merged));
+  log('Saved ' + valid.length + ' new questions (' + mode + '). Total in bank: ' + merged.length, 'success');
+  log('Go to the <a href="index.html">flashcard app</a> to study!', 'success');
+  if (mode === 'replace') { localStorage.removeItem('ceh-progress'); log('Progress reset.', 'warn'); }
+
+  // Update the existing count display
+  updateExistingCount();
+}
   </script>
 </body>
 </html>

@@ -40,6 +40,62 @@ async function init() {
 
   document.getElementById('total-q').textContent = questions.length;
   updateStats();
+
+  // Run duplicate detection in background
+  setTimeout(function() { findDuplicates(); }, 100);
+}
+
+// ===== GITHUB SYNC =====
+// Configure your repo here
+const GITHUB_REPO = 'DevinCh33/FLASHC-flashcardPWA';
+const GITHUB_BRANCH = 'main';
+const SYNC_FILE = 'data/all-questions.json';
+
+function getSyncUrl() {
+  return 'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_BRANCH + '/' + SYNC_FILE + '?t=' + Date.now();
+}
+
+async function syncFromGitHub() {
+  const statusEl = document.getElementById('sync-status');
+  if (statusEl) statusEl.textContent = 'Syncing...';
+
+  try {
+    const resp = await fetch(getSyncUrl());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const remoteQuestions = await resp.json();
+
+    if (!Array.isArray(remoteQuestions) || remoteQuestions.length === 0) {
+      throw new Error('Empty or invalid question data');
+    }
+
+    // Merge: keep local questions, add new ones from remote
+    const localIds = new Set(questions.map(q => normalizeForComparison(q.question)));
+    let added = 0;
+    let nextId = questions.length > 0 ? Math.max(...questions.map(q => q.id)) + 1 : 1;
+
+    remoteQuestions.forEach(function(rq) {
+      const norm = normalizeForComparison(rq.question);
+      if (!localIds.has(norm)) {
+        rq.id = nextId++;
+        questions.push(rq);
+        localIds.add(norm);
+        added++;
+      }
+    });
+
+    // Save merged set
+    localStorage.setItem('ceh-custom-questions', JSON.stringify(questions));
+    document.getElementById('total-q').textContent = questions.length;
+    updateStats();
+    setTimeout(function() { findDuplicates(); }, 50);
+
+    if (statusEl) statusEl.textContent = 'Synced! +' + added + ' new (total: ' + questions.length + ')';
+    if (added === 0 && statusEl) statusEl.textContent = 'Up to date (' + questions.length + ' questions)';
+
+  } catch (err) {
+    console.error('Sync failed:', err);
+    if (statusEl) statusEl.textContent = 'Sync failed: ' + err.message;
+  }
 }
 
 // ===== PERSISTENCE =====
@@ -104,6 +160,7 @@ function showView(viewId) {
   });
 
   if (viewId === 'home') updateStats();
+  if (viewId === 'bank') renderBank();
 }
 
 // ===== STUDY MODE =====

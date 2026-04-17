@@ -1,9 +1,10 @@
-const CACHE_NAME = 'ceh-flashcards-v2';
+const CACHE_NAME = 'ceh-flashcards-v4';
 const ASSETS = [
   './',
   './index.html',
   './import.html',
   './app.js',
+  './bank.js',
   './manifest.json',
   './data/all-questions.json',
   './icon.svg'
@@ -26,6 +27,18 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Network-first for JSON data files (so sync always gets fresh data)
+  if (event.request.url.includes('all-questions.json') || event.request.url.includes('raw.githubusercontent.com')) {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+  // Cache-first for everything else
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request))
   );
