@@ -1,6 +1,6 @@
 [
   {
-    "id": 211,
+    "id": 1,
     "question": "Let's imagine three companies (A, B and C), all competing in a challenging global environment. Company A and B are working together in developing a product that will generate a major competitive advantage for them. Company A has a secure DNS server while company B has a DNS server vulnerable to spoofing. With a spoofing attack on the DNS server of company B, company C gains access to outgoing e-mails from company B. How do you prevent DNS spoofing?",
     "options": {
       "A": "Install DNS logger and track vulnerable packets",
@@ -11,7 +11,7 @@
     "answer": "C"
   },
   {
-    "id": 212,
+    "id": 2,
     "question": "Which Intrusion Detection System is the best applicable for large environments where critical assets on the network need extra scrutiny and is ideal for observing sensitive network segments?",
     "options": {
       "A": "Honeypots",
@@ -22,7 +22,7 @@
     "answer": "C"
   },
   {
-    "id": 213,
+    "id": 3,
     "question": "A large company intends to use Blackberry for corporate mobile phones and a security analyst is assigned to evaluate the possible threats. The analyst will use the Blackjacking attack method to demonstrate how an attacker could circumvent perimeter defenses and gain access to the Prometric Online Testing – Reports https://ibt1.prometric.com/users/custom/report_queue/rq_str... corporate network. What tool should the analyst use to perform a Blackjacking attack?",
     "options": {
       "A": "Paros Proxy",
@@ -33,7 +33,7 @@
     "answer": "B"
   },
   {
-    "id": 214,
+    "id": 4,
     "question": "What is the minimum number of network connections in a multihomed firewall?",
     "options": {
       "A": "3",
@@ -44,7 +44,7 @@
     "answer": "A"
   },
   {
-    "id": 215,
+    "id": 5,
     "question": "Which of the following is a component of a risk assessment?",
     "options": {
       "A": "Administrative safeguards",
@@ -55,7 +55,7 @@
     "answer": "A"
   },
   {
-    "id": 216,
+    "id": 6,
     "question": "Session splicing is an IDS evasion technique in which an attacker delivers data in multiple, small sized packets to the target computer, making it very difficult for an IDS to detect the attack signatures. Which tool can be used to perform session splicing attacks?",
     "options": {
       "A": "tcpsplice",
@@ -66,7 +66,7 @@
     "answer": "D"
   },
   {
-    "id": 217,
+    "id": 7,
     "question": "Which of the following is not a Bluetooth attack?",
     "options": {
       "A": "Bluedriving",
@@ -77,7 +77,7 @@
     "answer": "A"
   },
   {
-    "id": 218,
+    "id": 8,
     "question": "What is the proper response for a NULL scan if the port is closed?",
     "options": {
       "A": "SYN",
@@ -90,7 +90,7 @@
     "answer": "E"
   },
   {
-    "id": 219,
+    "id": 9,
     "question": "You are the Network Admin, and you get a complaint that some of the websites are no longer accessible. You try to ping the servers and find them to be reachable. Then you type the IP address and then you try on the browser, and find it to be accessible. But they are not accessible when you try using the URL. What may be the problem?",
     "options": {
       "A": "Traffic is Blocked on UDP Port 53",
@@ -101,7 +101,7 @@
     "answer": "A"
   },
   {
-    "id": 220,
+    "id": 10,
     "question": "If a token and 4-digit personal identification number (PIN) are used to access a computer system and the token performs off-line checking for the correct PIN, what type of attack is possible?",
     "options": {
       "A": "Birthday",
@@ -112,7 +112,7 @@
     "answer": "B"
   },
   {
-    "id": 221,
+    "id": 11,
     "question": "Peter, a Network Administrator, has come to you looking for advice on a tool that would help him perform SNMP enquires over the network. Which of these tools would do the SNMP enumeration he is looking for? Select the best answers.",
     "options": {
       "A": "SNMPUtil",
@@ -124,7 +124,7 @@
     "answer": "ABD"
   },
   {
-    "id": 222,
+    "id": 12,
     "question": "What is a ??Collision attack?? in cryptography?",
     "options": {
       "A": "Collision attacks try to get the public key",
@@ -135,7 +135,7 @@
     "answer": "D"
   },
   {
-    "id": 223,
+    "id": 13,
     "question": "PGP, SSL, and IKE are all examples of which type of cryptography?",
     "options": {
       "A": "Digest",
@@ -146,7 +146,7 @@
     "answer": "C"
   },
   {
-    "id": 224,
+    "id": 14,
     "question": "MX record priority increases as the number increases. (True/False.)",
     "options": {
       "A": "True",
@@ -155,7 +155,7 @@
     "answer": "B"
   },
   {
-    "id": 225,
+    "id": 15,
     "question": "A company??s policy requires employees to perform file transfers using protocols which encrypt traffic. You suspect some employees are still performing file transfers using unencrypted protocols because the employees do not like changes. You have positioned a network sniffer to capture traffic from the laptops used by employees in the data ingest department. Using Wireshark to examine the captured traffic, which command can be used as display filter to find unencrypted file transfers?",
     "options": {
       "A": "tcp.port = = 21",
@@ -166,7 +166,7 @@
     "answer": "A"
   },
   {
-    "id": 226,
+    "id": 16,
     "question": "s) What is the known plaintext attack used against DES which gives the result that encrypting plaintext with one DES key followed by encrypting it with a second DES key is no more secure than using a single key?",
     "options": {
       "A": "Man-in-the-middle attack",
@@ -177,7 +177,7 @@
     "answer": "B"
   },
   {
-    "id": 227,
+    "id": 17,
     "question": "Which of the following represents the initial two commands that an IRC client sends to join an IRC network?",
     "options": {
       "A": "USER, NICK",
@@ -188,7 +188,7 @@
     "answer": "A"
   },
   {
-    "id": 228,
+    "id": 18,
     "question": "The establishment of a TCP connection involves a negotiation called three-way handshake. What type of message does the client send to the server in order to begin this negotiation?",
     "options": {
       "A": "ACK",
@@ -199,7 +199,7 @@
     "answer": "B"
   },
   {
-    "id": 229,
+    "id": 19,
     "question": "You just set up a security system in your network. In what kind of system would you find the following string of characters used as a rule within its configuration? alert tcp any any -> 192.168.100.0/24 21 (msg: ????FTP on the network!????;)",
     "options": {
       "A": "A firewall IPTable",
@@ -210,7 +210,7 @@
     "answer": "D"
   },
   {
-    "id": 230,
+    "id": 20,
     "question": "Which of the following tools are used for enumeration? (Choose three.)",
     "options": {
       "A": "SolarWinds",
@@ -222,7 +222,7 @@
     "answer": "BDE"
   },
   {
-    "id": 231,
+    "id": 21,
     "question": "s) What is Eve trying to do?",
     "options": {
       "A": "Eve is trying to connect as a user with Administrator privileges",
@@ -233,7 +233,7 @@
     "answer": "C"
   },
   {
-    "id": 232,
+    "id": 22,
     "question": "You are tasked to perform a penetration test. While you are performing information gathering, you find an employee list in Google. You find the receptionist??s email, and you send her an email changing the source email to her boss??s email (boss@company). In this email, you ask for a pdf with information. She reads your email and sends back a pdf with links. You exchange the pdf links with your malicious links (these links contain malware) and send back the modified pdf, saying that the links don??t work. She reads your email, opens the links, and her machine gets infected. You now have access to the company network. What testing method did you use?",
     "options": {
       "A": "Social engineering",
@@ -244,7 +244,7 @@
     "answer": "A"
   },
   {
-    "id": 233,
+    "id": 23,
     "question": "Which of the following statements about a zone transfer is correct? (Choose three.)",
     "options": {
       "A": "A zone transfer is accomplished with the DNS",
@@ -257,7 +257,7 @@
     "answer": "ACE"
   },
   {
-    "id": 234,
+    "id": 24,
     "question": "As a securing consultant, what are some of the things you would recommend to a company to ensure DNS security?",
     "options": {
       "A": "Use the same machines for DNS and other applications",
@@ -269,7 +269,7 @@
     "answer": "BCDE"
   },
   {
-    "id": 235,
+    "id": 25,
     "question": "A hacker is an intelligent individual with excellent computer skills and the ability to explore a computer??s software and hardware without the owner??s permission. Their intention can either be to simply gain knowledge or to illegally make changes. Which of the following class of hacker refers to an individual who works both offensively and defensively at various times?",
     "options": {
       "A": "White Hat",
@@ -280,7 +280,7 @@
     "answer": "C"
   },
   {
-    "id": 236,
+    "id": 26,
     "question": "Which of the following incident handling process phases is responsible for defining rules, collaborating human workforce, creating a back-up plan, and testing the plans for an organization?",
     "options": {
       "A": "Preparation phase",
@@ -291,7 +291,7 @@
     "answer": "A"
   },
   {
-    "id": 237,
+    "id": 27,
     "question": "Which of the following tools is used to detect wireless LANs using the 802.11a/b/g/n WLAN standards on a linux platform?",
     "options": {
       "A": "Kismet",
@@ -302,7 +302,7 @@
     "answer": "A"
   },
   {
-    "id": 238,
+    "id": 28,
     "question": "The configuration allows a wired or wireless network interface controller to pass all traffic it receives to the Central Processing Unit (CPU), rather than passing only the frames that the controller is intended to receive. Which of the following is being described?",
     "options": {
       "A": "Multi-cast mode",
@@ -313,7 +313,7 @@
     "answer": "B"
   },
   {
-    "id": 239,
+    "id": 29,
     "question": "Which of the following is a low-tech way of gaining unauthorized access to systems?",
     "options": {
       "A": "Social Engineering",
@@ -324,7 +324,7 @@
     "answer": "A"
   },
   {
-    "id": 240,
+    "id": 30,
     "question": "What is correct about digital signatures?",
     "options": {
       "A": "A digital signature cannot be moved from one signed document to another because it is the hash of the original document encrypted with the private key of the signing party.",
@@ -335,7 +335,7 @@
     "answer": "A"
   },
   {
-    "id": 241,
+    "id": 31,
     "question": "What is a NULL scan?",
     "options": {
       "A": "A scan in which all flags are turned off",
@@ -347,7 +347,7 @@
     "answer": "A"
   },
   {
-    "id": 242,
+    "id": 32,
     "question": "A large mobile telephony and data network operator has a data center that houses network elements. These are essentially large computers running on Linux. The perimeter of the data center is secured with firewalls and IPS systems. What is the best security policy concerning this setup?",
     "options": {
       "A": "Network elements must be hardened with user ids and strong password",
@@ -359,7 +359,7 @@
     "answer": "A"
   },
   {
-    "id": 243,
+    "id": 33,
     "question": "Which of the following describes the characteristics of a Boot Sector Virus?",
     "options": {
       "A": "Modifies directory table entries so that directory entries point to the virus code instead of the actual program.",
@@ -370,7 +370,7 @@
     "answer": "C"
   },
   {
-    "id": 244,
+    "id": 34,
     "question": "The ??Gray-box testing?? methodology enforces what kind of restriction?",
     "options": {
       "A": "Only the external operation of a system is accessible to the tester.",
@@ -381,7 +381,7 @@
     "answer": "D"
   },
   {
-    "id": 245,
+    "id": 35,
     "question": "The company ABC recently contracts a new accountant. The accountant will be working with the financial statements. Those financial statements need to be approved by the CFO and then they will be sent to the accountant but the CFO is worried because he wants to be sure that the information sent to the accountant was not modified once he approved it. Which of the following options can be useful to ensure the integrity of the data?",
     "options": {
       "A": "The CFO can use a hash algorithm in the document once he approved the financial statements",
@@ -392,7 +392,7 @@
     "answer": "A"
   },
   {
-    "id": 246,
+    "id": 36,
     "question": "Scenario1: * 1. Victim opens the attacker's web site. * 2. Attacker sets up a web site which contains interesting and attractive content like 'Do you want to make $1000 in a day?'. * 3. Victim clicks to the interesting and attractive content URL. * 4. Attacker creates a transparent 'iframe' in front of the URL which victim attempts to click, so victim thinks that he/she clicks to the 'Do you want to make $1000 in a day?' URL but actually he/she clicks to the content or URL that exists in the transparent 'iframe' which is setup by the attacker. What is the name of the attack which is mentioned in the scenario?",
     "options": {
       "A": "Session Fixation",
@@ -403,7 +403,7 @@
     "answer": "D"
   },
   {
-    "id": 247,
+    "id": 37,
     "question": "Which type of security feature stops vehicles from crashing through the doors of a building?",
     "options": {
       "A": "Bollards",
@@ -414,7 +414,7 @@
     "answer": "A"
   },
   {
-    "id": 248,
+    "id": 38,
     "question": "When you are getting information about a web server, it is very important to know the HTTP Methods (GET, POST, HEAD, PUT, DELETE, TRACE) that are available because there are two critical methods (PUT and DELETE). PUT can upload a file to the server and DELETE can delete a file from the server. You can detect all these methods (GET, POST, HEAD, DELETE, PUT, TRACE) using NMAP script engine. What Nmap script will help you with this task?",
     "options": {
       "A": "http-methods",
@@ -425,7 +425,7 @@
     "answer": "A"
   },
   {
-    "id": 249,
+    "id": 39,
     "question": "By using a smart card and pin, you are using a two-factor authentication that satisfies",
     "options": {
       "A": "Something you are and something you remember",
@@ -436,7 +436,7 @@
     "answer": "B"
   },
   {
-    "id": 250,
+    "id": 40,
     "question": "What did the following commands determine?",
     "options": {
       "A": "That the Joe account has a SID of 500",
@@ -448,7 +448,7 @@
     "answer": "D"
   },
   {
-    "id": 251,
+    "id": 41,
     "question": "Null sessions are un-authenticated connections (not using a username or password.) to an NT or 2000 system. Which TCP and UDP ports must you filter to check null sessions on your network?",
     "options": {
       "A": "137 and 139",
@@ -459,7 +459,7 @@
     "answer": "D"
   },
   {
-    "id": 252,
+    "id": 42,
     "question": "Which of the following Linux commands will resolve a domain name into IP address?",
     "options": {
       "A": ">host-t a hackeddomain.com",
@@ -470,7 +470,7 @@
     "answer": "A"
   },
   {
-    "id": 253,
+    "id": 43,
     "question": "What is the role of test automation in security testing?",
     "options": {
       "A": "It is an option but it tends to be very expensive.",
@@ -483,7 +483,7 @@
     "answer": "D"
   },
   {
-    "id": 254,
+    "id": 44,
     "question": "An Intrusion Detection System (IDS) has alerted the network administrator to a possibly malicious sequence of packets sent to a Web server in the network??s external DMZ. The packet traffic was captured by the IDS and saved to a PCAP file. What type of network tool can be used to determine if these packets are genuinely malicious or simply a false positive?",
     "options": {
       "A": "Protocol analyzer",
@@ -494,7 +494,7 @@
     "answer": "A"
   },
   {
-    "id": 255,
+    "id": 45,
     "question": "You are a penetration tester working to test the user awareness of the employees of the client xyz. You harvested two employees' emails from some public sources and are creating a client-side backdoor to send it to the employees via email. Which stage of the cyber kill chain are you at?",
     "options": {
       "A": "Reconnaissance",
@@ -505,7 +505,7 @@
     "answer": "C"
   },
   {
-    "id": 256,
+    "id": 46,
     "question": "Jim, a professional hacker, targeted an organization that is operating critical Industrial Infrastructure. Jim used Nmap to scan open pons and running services on systems connected to the organization's OT network. He used an Nmap command to identify Ethernet/IP devices connected to the Internet and further gathered Information such as the vendor name, product code and name, device name, and IP address. Which of the following Nmap commands helped Jim retrieve the required information?",
     "options": {
       "A": "nmap -Pn -sT --scan-delay 1s --max-parallelism 1 -p < Port List > < Target IP >",
@@ -516,7 +516,7 @@
     "answer": "B"
   },
   {
-    "id": 257,
+    "id": 47,
     "question": "Steve, an attacker, created a fake profile on a social media website and sent a request to Stella. Stella was enthralled by Steve's profile picture and the description given for his profile, and she initiated a conversation with him soon after accepting the request. After a few days. Sieve started asking about her company details and eventually gathered all the essential information regarding her company. What is the social engineering technique Steve employed in the above scenario?",
     "options": {
       "A": "Diversion theft",
@@ -527,7 +527,7 @@
     "answer": "C"
   },
   {
-    "id": 258,
+    "id": 48,
     "question": "How is the public key distributed in an orderly, controlled fashion so that the users can be sure of the sender??s identity?",
     "options": {
       "A": "Hash value",
@@ -538,7 +538,7 @@
     "answer": "D"
   },
   {
-    "id": 259,
+    "id": 49,
     "question": "Nedved is an IT Security Manager of a bank in his country. One day. he found out that there is a security breach to his company's email server based on analysis of a suspicious connection from the email server to an unknown IP Address. What is the first thing that Nedved needs to do before contacting the incident response team?",
     "options": {
       "A": "Leave it as it Is and contact the incident response te3m right away",
@@ -549,7 +549,7 @@
     "answer": "C"
   },
   {
-    "id": 260,
+    "id": 50,
     "question": "s) which of the following protocols can be used to secure an LDAP service against anonymous queries?",
     "options": {
       "A": "SSO",
@@ -560,7 +560,7 @@
     "answer": "D"
   },
   {
-    "id": 261,
+    "id": 51,
     "question": "Boney, a professional hacker, targets an organization for financial benefits. He performs an attack by sending his session ID using an MITM attack technique. Boney first obtains a valid session ID by logging into a service and later feeds the same session 10 to the target employee. The session ID links the target employee to Boneys account page without disclosing any information to the victim. When the target employee clicks on the link, all the sensitive payment details entered in a form are linked to Boneys account. What is the attack performed by Boney in the above scenario?",
     "options": {
       "A": "Session donation attack",
@@ -571,7 +571,7 @@
     "answer": "A"
   },
   {
-    "id": 262,
+    "id": 52,
     "question": "Vlady works in a fishing company where the majority of the employees have very little understanding of IT let alone IT Security. Several information security issues that Vlady often found includes, employees sharing password, writing his/her password on a post it note and stick it to his/her desk, leaving the computer unlocked, didn??t log out from emails or other social media accounts, and etc. After discussing with his boss, Vlady decided to make some changes to improve the security environment in his company. The first thing that Vlady wanted to do is to make the employees understand the importance of keeping confidential information, such as password, a secret and they should not share it with other persons. Which of the following steps should be the first thing that Vlady should do to make the employees in his company understand to importance of keeping confidential information a secret?",
     "options": {
       "A": "Warning to those who write password on a post it note and put it on his/her desk",
@@ -582,7 +582,7 @@
     "answer": "A"
   },
   {
-    "id": 263,
+    "id": 53,
     "question": "What is one of the advantages of using both symmetric and asymmetric cryptography in SSL/TLS?",
     "options": {
       "A": "Symmetric algorithms such as AES provide a failsafe when asymmetric methods fail.",
@@ -594,7 +594,7 @@
     "answer": "D"
   },
   {
-    "id": 264,
+    "id": 54,
     "question": "Ethical hacker jane Smith is attempting to perform an SQL injection attach. She wants to test the response time of a true or false response and wants to use a second command to determine whether the database will return true or false results for user IDs. which two SQL Injection types would give her the results she is looking for?",
     "options": {
       "A": "Out of band and boolean-based",
@@ -605,7 +605,7 @@
     "answer": "D"
   },
   {
-    "id": 265,
+    "id": 55,
     "question": "What kind of detection techniques is being used in antivirus softwares that identifies malware by collecting data from multiple protected systems and instead of analyzing files locally it's made on the premiers environment-",
     "options": {
       "A": "VCloud based",
@@ -616,7 +616,7 @@
     "answer": "A"
   },
   {
-    "id": 266,
+    "id": 56,
     "question": "Bella, a security professional working at an it firm, finds that a security breach has occurred while transferring important files. Sensitive data, employee usernames. and passwords are shared In plaintext, paving the way for hackers 10 perform successful session hijacking. To address this situation. Bella Implemented a protocol that sends data using encryption and digital certificates. Which of the following protocols Is used by Bella?",
     "options": {
       "A": "FTP",
@@ -627,7 +627,7 @@
     "answer": "C"
   },
   {
-    "id": 267,
+    "id": 57,
     "question": "is a tool that can hide processes from the process list, can hide files, registry entries, and intercept keystrokes.",
     "options": {
       "A": "Trojan",
@@ -639,7 +639,7 @@
     "answer": "B"
   },
   {
-    "id": 268,
+    "id": 58,
     "question": "These hackers have limited or no training and know how to use only basic techniques or tools. What kind of hackers are we talking about?",
     "options": {
       "A": "Black-Hat Hackers A",
@@ -650,7 +650,7 @@
     "answer": "B"
   },
   {
-    "id": 269,
+    "id": 59,
     "question": "Sam is working as a system administrator In an organization. He captured the principal characteristics of a vulnerability and produced a numerical score to reflect Its severity using CVSS v3.0 to property assess and prioritize the organization's vulnerability management processes. The base score that Sam obtained after performing cvss rating was 4.0. What is the CVSS severity level of the vulnerability discovered by Sam in the above scenario?",
     "options": {
       "A": "Medium",
@@ -661,7 +661,7 @@
     "answer": "A"
   },
   {
-    "id": 270,
+    "id": 60,
     "question": "John is an incident handler at a financial institution. His steps in a recent incident are not up to the standards of the company. John frequently forgets some steps and procedures while handling responses as they are very stressful to perform. Which of the following actions should John take to overcome this problem with the least administrative effort?",
     "options": {
       "A": "Create an incident checklist.",
@@ -672,7 +672,7 @@
     "answer": "C"
   },
   {
-    "id": 271,
+    "id": 61,
     "question": "What is the first step for a hacker conducting a DNS cache poisoning (DNS spoofing) attack against an organization?",
     "options": {
       "A": "The attacker queries a nameserver using the DNS resolver.",
@@ -683,7 +683,7 @@
     "answer": "B"
   },
   {
-    "id": 272,
+    "id": 62,
     "question": "Clark is a professional hacker. He created and configured multiple domains pointing to the same host to switch quickly between the domains and avoid detection. Identify the behavior of the adversary In the above scenario.",
     "options": {
       "A": "use of command-line interface",
@@ -694,7 +694,7 @@
     "answer": "C"
   },
   {
-    "id": 273,
+    "id": 63,
     "question": "What type of analysis is performed when an attacker has partial knowledge of inner- workings of the application?",
     "options": {
       "A": "Black-box",
@@ -705,7 +705,7 @@
     "answer": "D"
   },
   {
-    "id": 274,
+    "id": 64,
     "question": "What would be the fastest way to perform content enumeration on a given web server by using the Gobuster tool?",
     "options": {
       "A": "Performing content enumeration using the bruteforce mode and 10 threads",
@@ -716,7 +716,7 @@
     "answer": "C"
   },
   {
-    "id": 275,
+    "id": 65,
     "question": "A friend of yours tells you that he downloaded and executed a file that was sent to him by a coworker. Since the file did nothing when executed, he asks you for help because he suspects that he may have installed a trojan on his computer. what tests would you perform to determine whether his computer Is Infected?",
     "options": {
       "A": "Use ExifTool and check for malicious content.",
@@ -727,7 +727,7 @@
     "answer": "D"
   },
   {
-    "id": 276,
+    "id": 66,
     "question": "An organization is performing a vulnerability assessment tor mitigating threats. James, a pen tester, scanned the organization by building an inventory of the protocols found on the organization's machines to detect which ports are attached to services such as an email server, a web server or a database server. After identifying the services, he selected the vulnerabilities on each machine and started executing only the relevant tests. What is the type of vulnerability assessment solution that James employed in the above scenario?",
     "options": {
       "A": "Product-based solutions",
@@ -738,7 +738,7 @@
     "answer": "D"
   },
   {
-    "id": 277,
+    "id": 67,
     "question": "Gavin owns a white-hat firm and is performing a website security audit for one of his clients. He begins by running a scan which looks for common misconfigurations and outdated software versions. Which of the following tools is he most likely using?",
     "options": {
       "A": "Nikto",
@@ -749,7 +749,7 @@
     "answer": "B"
   },
   {
-    "id": 278,
+    "id": 68,
     "question": "During the process of encryption and decryption, what keys are shared?",
     "options": {
       "A": "Private keys",
@@ -760,7 +760,7 @@
     "answer": "C"
   },
   {
-    "id": 279,
+    "id": 69,
     "question": "Abel, a cloud architect, uses container technology to deploy applications/software including all its dependencies, such as libraries and configuration files, binaries, and other resources that run independently from other processes in the cloud environment. For the containerization of applications, he follows the five-tier container technology architecture. Currently. Abel is verifying and validating image contents, signing images, and sending them to the registries. Which of the following tiers of the container technology architecture Is Abel currently working in?",
     "options": {
       "A": "Tier-1: Developer machines",
@@ -771,7 +771,7 @@
     "answer": "D"
   },
   {
-    "id": 280,
+    "id": 70,
     "question": "Henry Is a cyber security specialist hired by BlackEye - Cyber security solutions. He was tasked with discovering the operating system (OS) of a host. He used the Unkornscan tool to discover the OS of the target system. As a result, he obtained a TTL value, which Indicates that the target system is running a Windows OS. Identify the TTL value Henry obtained, which indicates that the target OS is Windows.",
     "options": {
       "A": "64",
@@ -782,7 +782,7 @@
     "answer": "B"
   },
   {
-    "id": 281,
+    "id": 71,
     "question": "When a security analyst prepares for the formal security assessment - what of the following should be done in order to determine inconsistencies in the secure assets database and verify that system is compliant to the minimum security baseline?",
     "options": {
       "A": "Data items and vulnerability scanning",
@@ -793,7 +793,7 @@
     "answer": "A"
   },
   {
-    "id": 282,
+    "id": 72,
     "question": "which type of virus can change its own code and then cipher itself multiple times as it replicates?",
     "options": {
       "A": "Stealth virus",
@@ -804,7 +804,7 @@
     "answer": "A"
   },
   {
-    "id": 283,
+    "id": 73,
     "question": "Which of the following statements is FALSE with respect to Intrusion Detection Systems?",
     "options": {
       "A": "Intrusion Detection Systems can be configured to distinguish specific content in network packets",
@@ -815,7 +815,7 @@
     "answer": "B"
   },
   {
-    "id": 284,
+    "id": 74,
     "question": "Which of the following DoS tools is used to attack target web applications by starvation of available sessions on the web server? The tool keeps sessions at halt using never-ending POST transmissions and sending an arbitrarily large content-length header value.",
     "options": {
       "A": "My Doom",
@@ -826,7 +826,7 @@
     "answer": "C"
   },
   {
-    "id": 285,
+    "id": 75,
     "question": "Morris, a professional hacker, performed a vulnerability scan on a target organization by sniffing the traffic on the network lo identify the active systems, network services, applications, and vulnerabilities. He also obtained the list of the users who are currently accessing the network. What is the type of vulnerability assessment that Morris performed on the target organization?",
     "options": {
       "A": "internal assessment",
@@ -837,7 +837,7 @@
     "answer": "B"
   },
   {
-    "id": 286,
+    "id": 76,
     "question": "Attacker Steve targeted an organization's network with the aim of redirecting the company's web traffic to another malicious website. To achieve this goal, Steve performed DNS cache poisoning by exploiting the vulnerabilities In the DNS server software and modified the original IP address of the target website to that of a fake website. What is the technique employed by Steve to gather information for identity theft?",
     "options": {
       "A": "Pretexting",
@@ -848,7 +848,7 @@
     "answer": "B"
   },
   {
-    "id": 287,
+    "id": 77,
     "question": "Gilbert, a web developer, uses a centralized web API to reduce complexity and increase the Integrity of updating and changing data. For this purpose, he uses a web service that uses HTTP methods such as PUT. POST. GET. and DELETE and can improve the overall performance, visibility, scalability, reliability, and portability of an application. What is the type of web-service API mentioned in the above scenario?",
     "options": {
       "A": "JSON-RPC",
@@ -859,7 +859,7 @@
     "answer": "C"
   },
   {
-    "id": 288,
+    "id": 78,
     "question": "This form of encryption algorithm is asymmetric key block cipher that is characterized by a 128-bit block size, and its key size can be up to 256 bits. Which among the following is this encryption algorithm?",
     "options": {
       "A": "Twofish encryption algorithm",
@@ -870,7 +870,7 @@
     "answer": "A"
   },
   {
-    "id": 289,
+    "id": 79,
     "question": "Which command can be used to show the current TCP/IP connections?",
     "options": {
       "A": "Netsh",
@@ -881,7 +881,7 @@
     "answer": "A"
   },
   {
-    "id": 290,
+    "id": 80,
     "question": "Tremp is an IT Security Manager, and he is planning to deploy an IDS in his small company. He is looking for an IDS with the following characteristics: - Verifies success or failure of an attack - Monitors system activities Detects attacks that a network-based IDS fails to detect - Near real-time detection and response - Does not require additional hardware - Lower entry cost Which type of IDS is best suited for Tremp's requirements?",
     "options": {
       "A": "Gateway-based IDS",
@@ -892,7 +892,7 @@
     "answer": "C"
   },
   {
-    "id": 291,
+    "id": 81,
     "question": "Which of the following are well known password-cracking programs?",
     "options": {
       "A": "L0phtcrack",
@@ -904,7 +904,7 @@
     "answer": "AE"
   },
   {
-    "id": 292,
+    "id": 82,
     "question": "What is the algorithm used by LM for Windows2000 SAM?",
     "options": {
       "A": "MD4",
@@ -915,7 +915,7 @@
     "answer": "B"
   },
   {
-    "id": 293,
+    "id": 83,
     "question": "In Trojan terminology, what is a covert channel?",
     "options": {
       "A": "A channel that transfers information within a computer system or network in a way that violates the security policy",
@@ -926,7 +926,7 @@
     "answer": "A"
   },
   {
-    "id": 294,
+    "id": 84,
     "question": "Emily, an extrovert obsessed with social media, posts a large amount of private information, photographs, and location tags of recently visited places. Realizing this. James, a professional hacker, targets Emily and her acquaintances, conducts a location search to detect their geolocation by using an automated tool, and gathers information to perform other sophisticated attacks. What is the tool employed by James in the above scenario?",
     "options": {
       "A": "ophcrack",
@@ -937,7 +937,7 @@
     "answer": "B"
   },
   {
-    "id": 295,
+    "id": 85,
     "question": "s) for his company for over 15 years and has become very successful. One day, Yancey comes in to work and finds out that the company will be downsizing and he will be out of a job in two weeks. Yancey is very angry and decides to place logic bombs, viruses, Trojans, and backdoors all over the network to take down the company once he has left. Yancey does not care if his actions land him in jail for 30 or more years, he just wants the company to pay for what they are doing to him. What would Yancey be considered?",
     "options": {
       "A": "Yancey would be considered a Suicide Hacker",
@@ -948,7 +948,7 @@
     "answer": "A"
   },
   {
-    "id": 296,
+    "id": 86,
     "question": "What piece of hardware on a computer's motherboard generates encryption keys and only releases a part of the key so that decrypting a disk on a new piece of hardware is not possible?",
     "options": {
       "A": "CPU",
@@ -959,7 +959,7 @@
     "answer": "D"
   },
   {
-    "id": 297,
+    "id": 87,
     "question": "An attacker redirects the victim to malicious websites by sending them a malicious link by email. The link appears authentic but redirects the victim to a malicious web page, which allows the attacker to steal the victim's data. What type of attack is this?",
     "options": {
       "A": "Phishing",
@@ -970,7 +970,7 @@
     "answer": "A"
   },
   {
-    "id": 298,
+    "id": 88,
     "question": "Abel, a security professional, conducts penetration testing in his client organization to check for any security loopholes. He launched an attack on the DHCP servers by broadcasting forged DHCP requests and leased all the DHCP addresses available in the DHCP scope until the server could not issue any more IP addresses. This led to a Dos attack, and as a result, legitimate employees were unable to access the clients network. Which of the following attacks did Abel perform in the above scenario?",
     "options": {
       "A": "VLAN hopping",
@@ -981,7 +981,7 @@
     "answer": "B"
   },
   {
-    "id": 299,
+    "id": 89,
     "question": "what is the port to block first in case you are suspicious that an loT device has been compromised?",
     "options": {
       "A": "22",
@@ -992,7 +992,7 @@
     "answer": "C"
   },
   {
-    "id": 300,
+    "id": 90,
     "question": "While browsing his Facebook teed, Matt sees a picture one of his friends posted with the caption. \"Learn more about your friends!\", as well as a number of personal questions. Matt is suspicious and texts his friend, who confirms that he did indeed post it. With assurance that the post is legitimate. Matt responds to the questions on the post, a few days later. Mates bank account has been accessed, and the password has been changed. What most likely happened?",
     "options": {
       "A": "Matt inadvertently provided the answers to his security questions when responding to the post.",
@@ -1003,7 +1003,7 @@
     "answer": "A"
   },
   {
-    "id": 301,
+    "id": 91,
     "question": "Techno Security Inc. recently hired John as a penetration tester. He was tasked with identifying open ports in the target network and determining whether the ports are online and any firewall rule sets are encountered. John decided to perform a TCP SYN ping scan on the target network. Which of the following Nmap commands must John use to perform the TCP SYN ping scan?",
     "options": {
       "A": "nmap -sn -pp < target ip address >",
@@ -1014,7 +1014,7 @@
     "answer": "C"
   },
   {
-    "id": 302,
+    "id": 92,
     "question": "While testing a web application in development, you notice that the web server does not properly ignore the ??dot dot slash?? (../) character string and instead returns the file listing of a folder structure of the server. What kind of attack is possible in this scenario?",
     "options": {
       "A": "Cross-site scripting",
@@ -1025,7 +1025,7 @@
     "answer": "D"
   },
   {
-    "id": 303,
+    "id": 93,
     "question": "While examining audit logs, you discover that people are able to telnet into the SMTP server on port 25. You would like to block this, though you do not see any evidence of an attack or other wrong doing. However, you are concerned about affecting the normal functionality of the email server. From the following options choose how best you can achieve this objective?",
     "options": {
       "A": "Block port 25 at the firewall.",
@@ -1037,7 +1037,7 @@
     "answer": "E"
   },
   {
-    "id": 304,
+    "id": 94,
     "question": "Password cracking programs reverse the hashing process to recover passwords. (True/False.)",
     "options": {
       "A": "True",
@@ -1046,7 +1046,7 @@
     "answer": "B"
   },
   {
-    "id": 305,
+    "id": 95,
     "question": "s) or you may contact us at the following address: Media Internet Consultants, Edif. Neptuno, Planta Baja, Ave. Ricardo J. Alfaro, Tumba Muerto, n/a Panama How will you determine if this is Real Anti-Virus or Fake Anti-Virus website?",
     "options": {
       "A": "Look at the website design, if it looks professional then it is a Real Anti-Virus website",
@@ -1058,7 +1058,7 @@
     "answer": "C"
   },
   {
-    "id": 306,
+    "id": 96,
     "question": "During the enumeration phase. Lawrence performs banner grabbing to obtain information such as OS details and versions of services running. The service that he enumerated runs directly on TCP port 445. Which of the following services is enumerated by Lawrence in this scenario?",
     "options": {
       "A": "Server Message Block (SMB)",
@@ -1069,7 +1069,7 @@
     "answer": "A"
   },
   {
-    "id": 307,
+    "id": 97,
     "question": "Ethical backer jane Doe is attempting to crack the password of the head of the it department of ABC company. She Is utilizing a rainbow table and notices upon entering a password that extra characters are added to the password after submitting. What countermeasure is the company using to protect against rainbow tables?",
     "options": {
       "A": "Password key hashing",
@@ -1080,7 +1080,7 @@
     "answer": "B"
   },
   {
-    "id": 308,
+    "id": 98,
     "question": "An attacker runs netcat tool to transfer a secret file between two hosts. He is worried about information being sniffed on the network. How would the attacker use netcat to encrypt the information before transmitting onto the wire?",
     "options": {
       "A": "Machine A: netcat -l -p -s password 1234 < testfileMachine B: netcat <machine A IP> 1234",
@@ -1091,7 +1091,7 @@
     "answer": "D"
   },
   {
-    "id": 309,
+    "id": 99,
     "question": "what is the correct way of using MSFvenom to generate a reverse TCP shellcode for windows?",
     "options": {
       "A": "msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.30 LPORT=4444 -f c",
@@ -1102,7 +1102,7 @@
     "answer": "C"
   },
   {
-    "id": 310,
+    "id": 100,
     "question": "jane invites her friends Alice and John over for a LAN party. Alice and John access Jane's wireless network without a password. However. Jane has a long, complex password on her router. What attack has likely occurred?",
     "options": {
       "A": "Wireless sniffing",
@@ -1113,7 +1113,7 @@
     "answer": "C"
   },
   {
-    "id": 311,
+    "id": 101,
     "question": "Fred is the network administrator for his company. Fred is testing an internal switch. From an external IP address, Fred wants to try and trick this switch into thinking it already has established a session with his computer. How can Fred accomplish this?",
     "options": {
       "A": "Fred can accomplish this by sending an IP packet with the RST/SIN bit and the source address of his computer.",
@@ -1124,7 +1124,7 @@
     "answer": "D"
   },
   {
-    "id": 312,
+    "id": 102,
     "question": "Taylor, a security professional, uses a tool to monitor her company's website, analyze the website's traffic, and track the geographical location of the users visiting the company's website. Which of the following tools did Taylor employ in the above scenario?",
     "options": {
       "A": "WebSite Watcher",
@@ -1135,7 +1135,7 @@
     "answer": "B"
   },
   {
-    "id": 313,
+    "id": 103,
     "question": "An Internet Service Provider (ISP) has a need to authenticate users connecting via analog modems, Digital Subscriber Lines (DSL), wireless data services, and Virtual Private Networks (VPN) over a Frame Relay network. Which AAA protocol is the most likely able to handle this requirement?",
     "options": {
       "A": "TACACS+",
@@ -1146,7 +1146,7 @@
     "answer": "D"
   },
   {
-    "id": 314,
+    "id": 104,
     "question": "In your cybersecurity class, you are learning about common security risks associated with web servers. One topic that comes up is the risk posed by using default server settings. Why is using default settings ona web - server considered a security risk, and what would be the best initial step to mitigate this risk?",
     "options": {
       "A": "Default settings cause server malfunctions; simplify the settings",
@@ -1157,7 +1157,7 @@
     "answer": "C"
   },
   {
-    "id": 315,
+    "id": 105,
     "question": "Attempting an injection attack on a web server based on responses to True/False QUESTION NO:s is called which of the following?",
     "options": {
       "A": "Compound SQLi",
@@ -1168,7 +1168,7 @@
     "answer": "B"
   },
   {
-    "id": 316,
+    "id": 106,
     "question": "You're the security manager for a tech company that uses a database to store sensitive customer data. You have implemented countermeasures against SQL injection attacks. Recently, you noticed some suspicious activities and suspect an attacker is using SQL injection techniques. The attacker is believed to use different forms of payloads in his SQL queries. In the case of a successful SQL injection attack, which of the following payloads would have the most significant impact?",
     "options": {
       "A": "??OR 'T=\"1: This payload manipulates the WHERE clause of an SQL statement, allowing the attacker to view unauthorized data",
@@ -1179,7 +1179,7 @@
     "answer": "C"
   },
   {
-    "id": 317,
+    "id": 107,
     "question": "What is the least important information when you analyze a public IP address in a security alert?",
     "options": {
       "A": "DNS",
@@ -1190,7 +1190,7 @@
     "answer": "D"
   },
   {
-    "id": 318,
+    "id": 108,
     "question": "What useful information is gathered during a successful Simple Mail Transfer Protocol (SMTP) enumeration?",
     "options": {
       "A": "The two internal commands VRFY and EXPN provide a confirmation of valid users, email addresses, aliases, and mailing lists.",
@@ -1199,5 +1199,997 @@
       "D": "A list of all mail proxy server addresses used by the targeted host"
     },
     "answer": "A"
+  },
+  {
+    "id": 109,
+    "question": "Study the following log extract and identify the attack.",
+    "options": {
+      "A": "Hexcode Attack",
+      "B": "Cross Site Scripting",
+      "C": "Multiple Domain Traversal Attack",
+      "D": "Unicode Directory Traversal Attack"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 110,
+    "question": "You are analysing traffic on the network with Wireshark. You want to routinely run a cron job which will run the capture against a specific set of IPs - 192.168.8.0/24. What command you would use?",
+    "options": {
+      "A": "wireshark --fetch ''192.168.8*''",
+      "B": "wireshark --capture --local masked 192.168.8.0 ---range 24",
+      "C": "tshark -net 192.255.255.255 mask 192.168.8.0",
+      "D": "sudo tshark -f''net 192 .68.8.0/24''"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 111,
+    "question": "What does the following command in netcat do? nc -l -u -p55555 < /etc/passwd",
+    "options": {
+      "A": "logs the incoming connections to /etc/passwd file",
+      "B": "loads the /etc/passwd file to the UDP port 55555",
+      "C": "grabs the /etc/passwd file when connected to UDP port 55555",
+      "D": "deletes the /etc/passwd file when connected to the UDP port 55555"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 112,
+    "question": "You are programming a buffer overflow exploit and you want to create a NOP sled of 200 bytes in the program exploit.c What is the hexadecimal value of NOP instruction?",
+    "options": {
+      "A": "0x60",
+      "B": "0x80",
+      "C": "0x70",
+      "D": "0x90"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 113,
+    "question": "Which of the following is the structure designed to verify and authenticate the identity of individuals within the enterprise taking part in a data exchange?",
+    "options": {
+      "A": "SOA",
+      "B": "biometrics",
+      "C": "single sign on",
+      "D": "PKI"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 114,
+    "question": "What two conditions must a digital signature meet?",
+    "options": {
+      "A": "Has to be the same number of characters as a physical signature and must be unique.",
+      "B": "Has to be unforgeable, and has to be authentic.",
+      "C": "Must be unique and have special characters.",
+      "D": "Has to be legible and neat."
+    },
+    "answer": "B"
+  },
+  {
+    "id": 115,
+    "question": "Which of the following tools can be used to perform a zone transfer?",
+    "options": {
+      "A": "NSLookup",
+      "B": "Finger",
+      "C": "Dig",
+      "D": "Sam Spade",
+      "E": "Host",
+      "F": "Netcat",
+      "G": "Neotrace"
+    },
+    "answer": "ACDE"
+  },
+  {
+    "id": 116,
+    "question": "One of your team members has asked you to analyze the following SOA record. What is the version? Rutgers.edu.SOA NS1.Rutgers.edu ipad.college.edu (200302028 3600 3600 604800 2400.) (Choose four.)",
+    "options": {
+      "A": "200303028",
+      "B": "3600",
+      "C": "604800",
+      "D": "2400",
+      "E": "60",
+      "F": "4800"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 117,
+    "question": "When discussing passwords, what is considered a brute force attack?",
+    "options": {
+      "A": "You attempt every single possibility until you exhaust all possible combinations or discover the password",
+      "B": "You threaten to use the rubber hose on someone unless they reveal their password",
+      "C": "You load a dictionary of words into your cracking program",
+      "D": "You create hashes of a large number of words and compare it with the encrypted passwords",
+      "E": "You wait until the password expires"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 118,
+    "question": "You are working as a Security Analyst in a company XYZ that owns the whole subnet range of 23.0.0.0/8 and 192.168.0.0/8. While monitoring the data, you find a high number of outbound connections. You see that IP’s owned by XYZ (Internal) and private IP’s are communicating to a Single Public IP. Therefore, the Internal IP’s are sending data to the Public IP. After further analysis, you find out that this Public IP is a blacklisted IP, and the internal communicating devices are compromised. What kind of attack does the above scenario depict?",
+    "options": {
+      "A": "Botnet Attack",
+      "B": "Spear Phishing Attack",
+      "C": "Advanced Persistent Threats",
+      "D": "Rootkit Attack"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 119,
+    "question": "Joseph was the Web site administrator for the Mason Insurance in New York, who's main Web site was located at www.masonins.com. Joseph uses his laptop computer regularly to administer the Web site. One night, Joseph received an urgent phone call from his friend, Smith. According to Smith, the main Mason Insurance web site had been vandalized! All of its normal content was removed and replaced with an attacker's message ''Hacker Message: You are dead! Freaks!” From his office, which was directly connected to Mason Insurance's internal network, Joseph surfed to the Web site using his laptop. In his browser, the Web site looked completely intact. No changes were apparent. Joseph called a friend of his at his home to help troubleshoot the problem. The Web site appeared defaced when his friend visited using his DSL connection. So, while Smith and his friend could see the defaced page, Joseph saw the intact Mason Insurance web site. To help make sense of this problem, Joseph decided to access the Web site using hisdial-up ISP. He disconnected his laptop from the corporate internal network and used his modem to dial up the same ISP used by Smith. After his modem connected, he quickly typed www.masonins.com in his browser to reveal the following web page: After seeing the defaced Web site, he disconnected his dial-up line, reconnected to the internal network, and used Secure Shell (SSH) to log in directly to the Web server. He ran Tripwire against the entire Web site, and determined that every system file and all the Web content on the server were intact. How did the attacker accomplish this hack?",
+    "options": {
+      "A": "ARP spoofing",
+      "B": "SQL injection",
+      "C": "DNS poisoning",
+      "D": "Routing table injection"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 120,
+    "question": "Which of the following algorithms can be used to guarantee the integrity of messages being sent, in transit, or stored?",
+    "options": {
+      "A": "symmetric algorithms",
+      "B": "asymmetric algorithms",
+      "C": "hashing algorithms",
+      "D": "integrity algorithms"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 121,
+    "question": "In the field of cryptanalysis, what is meant by a “rubber-hose” attack?",
+    "options": {
+      "A": "Forcing the targeted keystream through a hardware-accelerated device such as an ASIC.",
+      "B": "A backdoor placed into a cryptographic algorithm by its creator.",
+      "C": "Extraction of cryptographic secrets through coercion or torture.",
+      "D": "Attempting to decrypt ciphertext by making logical assumptions about the contents of the original plaintext."
+    },
+    "answer": "C"
+  },
+  {
+    "id": 122,
+    "question": "In an internal security audit, the white hat hacker gains control over a user account and attempts to acquire access to another account's confidential files and information. How can he achieve this?",
+    "options": {
+      "A": "Privilege Escalation",
+      "B": "Shoulder-Surfing",
+      "C": "Hacking Active Directory",
+      "D": "Port Scanning"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 123,
+    "question": "Which DNS resource record can indicate how long any \"DNS poisoning\" could last?",
+    "options": {
+      "A": "MX",
+      "B": "SOA",
+      "C": "NS",
+      "D": "TIMEOUT"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 124,
+    "question": "Based on the following extract from the log of a compromised machine, what is the hacker really trying to steal?",
+    "options": {
+      "A": "har.txt",
+      "B": "SAM file",
+      "C": "wwwroot",
+      "D": "Repair file"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 125,
+    "question": "You are tasked to configure the DHCP server to lease the last 100 usable IP addresses in subnet to. 1.4.0/23. Which of the following IP addresses could be teased as a result of the new configuration?",
+    "options": {
+      "A": "210.1.55.200",
+      "B": "10.1.4.254",
+      "C": "10..1.5.200",
+      "D": "10.1.4.156"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 126,
+    "question": "Log monitoring tools performing behavioral analysis have alerted several suspicious logins on a Linux server occurring during non-business hours. After further examination of all login activities, it is noticed that none of the logins have occurred during typical work hours. A Linux administrator who is investigating this problem realizes the system time on the Linux server is wrong by more than twelve hours. What protocol used on Linux servers to synchronize the time has stopped working?",
+    "options": {
+      "A": "Time Keeper",
+      "B": "NTP",
+      "C": "PPP",
+      "D": "OSPP"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 127,
+    "question": "Elliot is in the process of exploiting a web application that uses SQL as a back-end database. He’s determined that the application is vulnerable to SQL injection, and has introduced conditional timing delays into injected queries to determine whether they are successful. What type of SQL injection is Elliot most likely performing?",
+    "options": {
+      "A": "Error-based SQL injection",
+      "B": "Blind SQL injection",
+      "C": "Union-based SQL injection",
+      "D": "NoSQL injection"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 128,
+    "question": "When a normal TCP connection starts, a destination host receives a SYN (synchronize/start) packet from a source host and sends back a SYN/ACK (synchronize acknowledge). The destination host must then hear an ACK (acknowledge) of the SYN/ACK before the connection is established. This is referred to as the \"TCP three-way handshake.\" While waiting for the ACK to the SYN ACK, a connection queue of finite size on the destination host keeps track of connections waiting to be completed. This queue typically empties quickly since the ACK is expected to arrive a few milliseconds after the SYN ACK. How would an attacker exploit this design by launching TCP SYN attack?",
+    "options": {
+      "A": "Attacker generates TCP SYN packets with random destination addresses towards a victim host",
+      "B": "Attacker floods TCP SYN packets with random source addresses towards a victim host",
+      "C": "Attacker generates TCP ACK packets with random source addresses towards a victim host",
+      "D": "Attacker generates TCP RST packets with random source addresses towards a victim host"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 129,
+    "question": "Under what conditions does a secondary name server request a zone transfer from a primary name server?",
+    "options": {
+      "A": "When a primary SOA is higher that a secondary SOA",
+      "B": "When a secondary SOA is higher that a primary SOA",
+      "C": "When a primary name server has had its service restarted",
+      "D": "When a secondary name server has had its service restarted",
+      "E": "When the TTL falls to zero"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 130,
+    "question": "What tool can crack Windows SMB passwords simply by listening to network traffic?",
+    "options": {
+      "A": "This is not possible",
+      "B": "Netbus",
+      "C": "NTFSDOS",
+      "D": "L0phtcrack"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 131,
+    "question": "One of your team members has asked you to analyze the following SOA record. What is the TTL? Rutgers.edu.SOA NS1.Rutgers.edu ipad.college.edu (200302028 3600 3600 604800 2400.)",
+    "options": {
+      "A": "200303028",
+      "B": "3600",
+      "C": "604800",
+      "D": "2400",
+      "E": "60",
+      "F": "4800"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 132,
+    "question": "How can you determine if an LM hash you extracted contains a password that is less than 8 characters long?",
+    "options": {
+      "A": "There is no way to tell because a hash cannot be reversed",
+      "B": "The right most portion of the hash is always the same",
+      "C": "The hash always starts with AB923D",
+      "D": "The left most portion of the hash is always the same",
+      "E": "A portion of the hash will be all 0's"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 133,
+    "question": "You have successfully logged on a Linux system. You want to now cover your trade Your login attempt may be logged on several files located in /var/log. Which file does NOT belongs to the list:",
+    "options": {
+      "A": "user.log",
+      "B": "auth.fesg",
+      "C": "wtmp",
+      "D": "btmp"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 134,
+    "question": "When analyzing the IDS logs, the system administrator noticed an alert was logged when the external router was accessed from the administrator’s Computer to update the router configuration. What type of an alert is this?",
+    "options": {
+      "A": "False negative",
+      "B": "True negative",
+      "C": "True positive",
+      "D": "False positive"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 135,
+    "question": "If you want to only scan fewer ports than the default scan using Nmap tool, which option would you use?",
+    "options": {
+      "A": "–r",
+      "B": "–F",
+      "C": "–P",
+      "D": "–sP"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 136,
+    "question": "ViruXine.W32 virus hides their presence by changing the underlying executable code. This Virus code mutates while keeping the original algorithm intact, the code changes itself each time it runs, but the function of the code (its semantics) will not change at all. Here is a section of the Virus code: What is this technique called?",
+    "options": {
+      "A": "Polymorphic Virus",
+      "B": "Metamorphic Virus",
+      "C": "Dravidic Virus",
+      "D": "Stealth Virus"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 137,
+    "question": "Study the snort rule given below: From the options below, choose the exploit against which this rule applies.",
+    "options": {
+      "A": "WebDav",
+      "B": "SQL Slammer",
+      "C": "MS Blaster",
+      "D": "MyDoom"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 138,
+    "question": "“........is an attack type for a rogue Wi-Fi access point that appears to be a legitimate one offered on the premises, but actually has been set up to eavesdrop on wireless communications. It is the wireless version of the phishing scam. An attacker fools wireless users into connecting a laptop or mobile phone to a tainted hot- spot by posing as a legitimate provider. This type of attack may be used to steal the passwords of unsuspecting users by either snooping the communication link or by phishing, which involves setting up a fraudulent web site and luring people there.” Fill in the blank with appropriate choice.",
+    "options": {
+      "A": "Evil Twin Attack",
+      "B": "Sinkhole Attack",
+      "C": "Collision Attack",
+      "D": "Signal Jamming Attack"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 139,
+    "question": "You need a tool that can do network intrusion prevention and intrusion detection, function as a network sniffer, and record network activity, what tool would you most likely select?",
+    "options": {
+      "A": "Nmap",
+      "B": "Cain & Abel",
+      "C": "Nessus",
+      "D": "Snort"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 140,
+    "question": "While performing online banking using a Web browser, a user receives an email that contains a link to an interesting Web site. When the user clicks on the link, another Web browser session starts and displays a video of cats playing a piano. The next business day, the user receives what looks like an email from his bank, indicating that his bank account has been accessed from a foreign country. The email asks the user to call his bank and verify the authorization of a funds transfer that took place. What Web browser-based security vulnerability was exploited to compromise the user?",
+    "options": {
+      "A": "Clickjacking",
+      "B": "Cross-Site Scripting",
+      "C": "Cross-Site Request Forgery",
+      "D": "Web form input validation"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 141,
+    "question": "User A is writing a sensitive email message to user B outside the local network. User A has chosen to use PKI to secure his message and ensure only user B can read the sensitive email. At what layer of the OSI layer does the encryption and decryption of the message take place?",
+    "options": {
+      "A": "Application",
+      "B": "Transport",
+      "C": "Session",
+      "D": "Presentation"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 142,
+    "question": "A penetration tester is conducting a port scan on a specific host. The tester found several ports opened that were confusing in concluding the Operating System (OS) version installed. Considering that NMAP result below, which of the following is likely to be installed on the target machine by the OS? Starting NMAP 5.21 at 2011-03-15 11:06 NMAP scan report for 172.16.40.65 Host is up (1.00s latency). Not shown: 993 closed ports PORT STATE SERVICE 21/tcp open ftp 23/tcp open telnet 80/tcp open http 139/tcp open netbios-ssn 515/tcp open 631/tcp open ipp 9100/tcp open MAC Address: 00:00:48:0D:EE:8",
+    "options": {
+      "A": "The host is likely a Linux machine.",
+      "B": "The host is likely a printer.",
+      "C": "The host is likely a router.",
+      "D": "The host is likely a Windows machine."
+    },
+    "answer": "B"
+  },
+  {
+    "id": 143,
+    "question": "Which type of sniffing technique is generally referred as MiTM attack?",
+    "options": {
+      "A": "Password Sniffing",
+      "B": "ARP Poisoning",
+      "C": "Mac Flooding",
+      "D": "DHCP Sniffing"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 144,
+    "question": "Bob, a network administrator at BigUniversity, realized that some students are connecting their notebooks in the wired network to have Internet access. In the university campus, there are many Ethernet ports available for professors and authorized visitors but not for students. He identified this when the IDS alerted for malware activities in the network. What should Bob do to avoid this problem?",
+    "options": {
+      "A": "Disable unused ports in the switches",
+      "B": "Separate students in a different VLAN",
+      "C": "Use the 802.1x protocol",
+      "D": "Ask students to use the wireless network"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 145,
+    "question": "A zone file consists of which of the following Resource Records (RRs)?",
+    "options": {
+      "A": "DNS, NS, AXFR, and MX records",
+      "B": "DNS, NS, PTR, and MX records",
+      "C": "SOA, NS, AXFR, and MX records",
+      "D": "SOA, NS, A, and MX records"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 146,
+    "question": "Which system consists of a publicly available set of databases that contain domain name registration contact information?",
+    "options": {
+      "A": "WHOIS",
+      "B": "CAPTCHA",
+      "C": "IANA",
+      "D": "IETF"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 147,
+    "question": "During an Xmas scan what indicates a port is closed?",
+    "options": {
+      "A": "No return response",
+      "B": "RST",
+      "C": "ACK",
+      "D": "SYN"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 148,
+    "question": "Every company needs a formal written document which spells out to employees precisely what they are allowed to use the company's systems for, what is prohibited, and what will happen to them if they break the rules. Two printed copies of the policy should be given to every employee as soon as possible after they join the organization. The employee should be asked to sign one copy, which should be safely filed by the company. No one should be allowed to use the company's computer systems until they have signed the policy in acceptance of its terms. What is this document called?",
+    "options": {
+      "A": "Information Audit Policy (IAP)",
+      "B": "Information Security Policy (ISP)",
+      "C": "Penetration Testing Policy (PTP)",
+      "D": "Company Compliance Policy (CCP)"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 149,
+    "question": "Eve is spending her day scanning the library computers. She notices that Alice is using a computer whose port 445 is active and listening. Eve uses the ENUM tool to enumerate Alice machine. From the command prompt, she types the following command. What is Eve trying to do?",
+    "options": {
+      "A": "Eve is trying to connect as a user with Administrator privileges",
+      "B": "Eve is trying to enumerate all users with Administrative privileges",
+      "C": "Eve is trying to carry out a password crack for user Administrator",
+      "D": "Eve is trying to escalate privilege of the null user to that of Administrator"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 150,
+    "question": "Bob is going to perform an active session hijack against Brownies Inc. He has found a target that allows session oriented connections (Telnet) and performs the sequence prediction on the target operating system. He manages to find an active session due to the high level of traffic on the network. What is Bob supposed to do next?",
+    "options": {
+      "A": "Take over the session",
+      "B": "Reverse sequence prediction",
+      "C": "Guess the sequence numbers",
+      "D": "Take one of the parties offline"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 151,
+    "question": "The network team has well-established procedures to follow for creating new rules on the firewall. This includes having approval from a manager prior to implementing any new rules. While reviewing the firewall configuration, you notice a recently implemented rule but cannot locate manager approval for it. What would be a good step to have in the procedures for a situation like this?",
+    "options": {
+      "A": "Have the network team document the reason why the rule was implemented without prior manager approval.",
+      "B": "Monitor all traffic using the firewall rule until a manager can approve it.",
+      "C": "Do not roll back the firewall rule as the business may be relying upon it, but try to get manager approval as soon as possible.",
+      "D": "Immediately roll back the firewall rule until a manager can approve it"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 152,
+    "question": "Bob, a system administrator at TPNQM SA, concluded one day that a DMZ is not needed if he properly configures the firewall to allow access just to servers/ports, which can have direct internet access, and block the access to workstations. Bob also concluded that DMZ makes sense just when a stateful firewall is available, which is not the case of TPNQM SA. In this context, what can you say?",
+    "options": {
+      "A": "Bob can be right since DMZ does not make sense when combined with stateless firewalls",
+      "B": "Bob is partially righ",
+      "C": "He does not need to separate networks if he can create rules by destination IPs, one by one",
+      "D": "Bob is totally wron",
+      "E": "DMZ is always relevant when the company has internet servers and workstations",
+      "F": "Bob is partially righ",
+      "G": "DMZ does not make sense when a stateless firewall is available"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 153,
+    "question": "As a Certified Ethical Hacker, you were contracted by a private firm to conduct an external security assessment through penetration testing. What document describes the specifics of the testing, the associated violations, and essentially protects both the organization’s interest and your liabilities as a tester?",
+    "options": {
+      "A": "Service Level Agreement",
+      "B": "Project Scope",
+      "C": "Rules of Engagement",
+      "D": "Non-Disclosure Agreement"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 154,
+    "question": "A technician is resolving an issue where a computer is unable to connect to the Internet using a wireless access point. The computer is able to transfer files locally to other machines, but cannot successfully reach the Internet. When the technician examines the IP address and default gateway they are both on the 192.168.1.0/24. Which of the following has occurred?",
+    "options": {
+      "A": "The computer is not using a private IP address.",
+      "B": "The gateway is not routing to a public IP address.",
+      "C": "The gateway and the computer are not on the same network.",
+      "D": "The computer is using an invalid IP address."
+    },
+    "answer": "B"
+  },
+  {
+    "id": 155,
+    "question": "To determine if a software program properly handles a wide range of invalid input, a form of automated testing can be used to randomly generate invalid input in an attempt to crash the program. What term is commonly used when referring to this type of testing?",
+    "options": {
+      "A": "Randomizing",
+      "B": "Bounding",
+      "C": "Mutating",
+      "D": "Fuzzing"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 156,
+    "question": "In the context of Windows Security, what is a 'null' user?",
+    "options": {
+      "A": "A user that has no skills",
+      "B": "An account that has been suspended by the admin",
+      "C": "A pseudo account that has no username and password",
+      "D": "A pseudo account that was created for security administration purpose"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 157,
+    "question": "An attacker, using a rogue wireless AP, performed an MITM attack and injected an HTML code to embed a malicious applet in all HTTP connections. When users accessed any page, the applet ran and exploited many machines. Which one of the following tools the hacker probably used to inject HTML code?",
+    "options": {
+      "A": "Wireshark",
+      "B": "Ettercap",
+      "C": "Aircrack-ng",
+      "D": "Tcpdump"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 158,
+    "question": "Matthew, a black hat, has managed to open a meterpreter session to one of the kiosk machines in Evil Corp’s lobby. He checks his current SID, which is S-1-5-21-1223352397-1872883824-861252104-501. What needs to happen before Matthew has full administrator access?",
+    "options": {
+      "A": "He must perform privilege escalation.",
+      "B": "He needs to disable antivirus protection.",
+      "C": "He needs to gain physical access.",
+      "D": "He already has admin privileges, as shown by the “501” at the end of the SID."
+    },
+    "answer": "A"
+  },
+  {
+    "id": 159,
+    "question": "Eric has discovered a fantastic package of tools named Dsniff on the Internet. He has learnt to use these tools in his lab and is now ready for real world exploitation. He was able to effectively intercept communications between the two entities and establish credentials with both sides of the connections. The two remote ends of the communication never notice that Eric is relaying the information between the two. What would you call this attack?",
+    "options": {
+      "A": "Interceptor",
+      "B": "Man-in-the-middle",
+      "C": "ARP Proxy",
+      "D": "Poisoning Attack"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 160,
+    "question": "CompanyXYZ has asked you to assess the security of their perimeter email gateway. From your office in New York, you craft a specially formatted email message and send it across the Internet to an employee of CompanyXYZ. The employee of CompanyXYZ is aware of your test. Your email message looks like this: From: jim_miller@companyxyz.com To: michelle_saunders@companyxyz.com Subject: Test message Date: 4/3/2017 14:37 The employee of CompanyXYZ receives your email message. This proves that CompanyXYZ’s email gateway doesn’t prevent what?",
+    "options": {
+      "A": "Email Masquerading",
+      "B": "Email Harvesting",
+      "C": "Email Phishing",
+      "D": "Email Spoofing"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 161,
+    "question": "This TCP flag instructs the sending system to transmit all buffered data immediately.",
+    "options": {
+      "A": "SYN",
+      "B": "RST",
+      "C": "PSH",
+      "D": "URG",
+      "E": "FIN"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 162,
+    "question": "Peter extracts the SIDs list from Windows 2000 Server machine using the hacking tool \"SIDExtractor\". Here is the output of the SIDs: From the above list identify the user account with System Administrator privileges.",
+    "options": {
+      "A": "John",
+      "B": "Rebecca",
+      "C": "Sheela",
+      "D": "Shawn",
+      "E": "Somia",
+      "F": "Chang",
+      "G": "Micah"
+    },
+    "answer": "F"
+  },
+  {
+    "id": 163,
+    "question": "Although FTP traffic is not encrypted by default, which layer 3 protocol would allow for end-to-end encryption of the connection?",
+    "options": {
+      "A": "SFTP",
+      "B": "Ipsec",
+      "C": "SSL",
+      "D": "FTPS"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 164,
+    "question": "Switches maintain a CAM Table that maps individual MAC addresses on the network to physical ports on the switch. In MAC flooding attack, a switch is fed with many Ethernet frames, each containing different source MAC addresses, by the attacker. Switches have a limited memory for mapping various MAC addresses to physical ports. What happens when the CAM table becomes full?",
+    "options": {
+      "A": "Switch then acts as hub by broadcasting packets to all machines on the network",
+      "B": "The CAM overflow table will cause the switch to crash causing Denial of Service",
+      "C": "The switch replaces outgoing frame switch factory default MAC address of FF:FF:FF:FF:FF:FF",
+      "D": "Every packet is dropped and the switch sends out SNMP alerts to the IDS port"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 165,
+    "question": "What is the known plaintext attack used against DES which gives the result that encrypting plaintext with one DES key followed by encrypting it with a second DES key is no more secure than using a single key?",
+    "options": {
+      "A": "Man-in-the-middle attack",
+      "B": "Meet-in-the-middle attack",
+      "C": "Replay attack",
+      "D": "Traffic analysis attack"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 166,
+    "question": "Some clients of TPNQM SA were redirected to a malicious site when they tried to access the TPNQM main site. Bob, a system administrator at TPNQM SA, found that they were victims of DNS Cache Poisoning. What should Bob recommend to deal with such a threat?",
+    "options": {
+      "A": "The use of security agents in clients’ computers",
+      "B": "The use of DNSSEC",
+      "C": "The use of double-factor authentication",
+      "D": "Client awareness"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 167,
+    "question": "Why would you consider sending an email to an address that you know does not exist within the company you are performing a Penetration Test for?",
+    "options": {
+      "A": "To determine who is the holder of the root account",
+      "B": "To perform a DoS",
+      "C": "To create needless SPAM",
+      "D": "To illicit a response back that will reveal information about email servers and how they treat undeliverable mail",
+      "E": "To test for virus protection"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 168,
+    "question": "You have the SOA presented below in your Zone. Your secondary servers have not been able to contact your primary server to synchronize information. How long will the secondary servers attempt to contact the primary server before it considers that zone is dead and stops responding to queries? collegae.edu.SOA, cikkye.edu ipad.college.edu. (200302028 3600 3600 604800 3600)",
+    "options": {
+      "A": "One day",
+      "B": "One hour",
+      "C": "One week",
+      "D": "One month"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 169,
+    "question": "You have retrieved the raw hash values from a Windows 2000 Domain Controller. Using social engineering, you come to know that they are enforcing strong passwords. You understand that all users are required to use passwords that are at least 8 characters in length. All passwords must also use 3 of the 4 following categories: lower case letters, capital letters, numbers and special characters. With your existing knowledge of users, likely user account names and the possibility that they will choose the easiest passwords possible, what would be the fastest type of password cracking attack you can run against these hash values and still get results?",
+    "options": {
+      "A": "Online Attack",
+      "B": "Dictionary Attack",
+      "C": "Brute Force Attack",
+      "D": "Hybrid Attack"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 170,
+    "question": "Take a look at the following attack on a Web Server using obstructed URL: How would you protect from these attacks?",
+    "options": {
+      "A": "Configure the Web Server to deny requests involving \"hex encoded\" characters",
+      "B": "Create rules in IDS to alert on strange Unicode requests",
+      "C": "Use SSL authentication on Web Servers",
+      "D": "Enable Active Scripts Detection at the firewall and routers"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 171,
+    "question": "Which results will be returned with the following Google search query? site:target.com – site:Marketing.target.com accounting",
+    "options": {
+      "A": "Results from matches on the site marketing.target.com that are in the domain target.com but do not include the word accounting.",
+      "B": "Results matching all words in the query.",
+      "C": "Results for matches on target.com and Marketing.target.com that include the word “accounting”",
+      "D": "Results matching “accounting” in domain target.com but not on the site Marketing.target.com"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 172,
+    "question": "Why should the security analyst disable/remove unnecessary ISAPI filters?",
+    "options": {
+      "A": "To defend against social engineering attacks",
+      "B": "To defend against webserver attacks",
+      "C": "To defend against jailbreaking",
+      "D": "To defend against wireless attacks"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 173,
+    "question": "What is the way to decide how a packet will move from an untrusted outside host to a protected inside that is behind a firewall, which permits the hacker to determine which ports are open and if the packets can pass through the packet-filtering of the firewall?",
+    "options": {
+      "A": "Session hijacking",
+      "B": "Firewalking",
+      "C": "Man-in-the middle attack",
+      "D": "Network sniffing"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 174,
+    "question": "In the context of password security, a simple dictionary attack involves loading a dictionary file (a text file full of dictionary words) into a cracking application such as L0phtCrack or John the Ripper, and running it against user accounts located by the application. The larger the word and word fragment selection, the more effective the dictionary attack is. The brute force method is the most inclusive, although slow. It usually tries every possible letter and number combination in its automated exploration. If you would use both brute force and dictionary methods combined together to have variation of words, what would you call such an attack?",
+    "options": {
+      "A": "Full Blown",
+      "B": "Thorough",
+      "C": "Hybrid",
+      "D": "BruteDics"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 175,
+    "question": "Which of the following tools performs comprehensive tests against web servers, including dangerous files and CGIs?",
+    "options": {
+      "A": "Nikto",
+      "B": "John the Ripper",
+      "C": "Dsniff",
+      "D": "Snort"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 176,
+    "question": "DHCP snooping is a great solution to prevent rogue DHCP servers on your network. Which security feature on switchers leverages the DHCP snooping database to help prevent man-in-the-middle attacks?",
+    "options": {
+      "A": "Spanning tree",
+      "B": "Dynamic ARP Inspection (DAI)",
+      "C": "Port security",
+      "D": "Layer 2 Attack Prevention Protocol (LAPP)"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 177,
+    "question": "Internet Protocol Security IPsec is actually a suite pf protocols. Each protocol within the suite provides different functionality. Collective IPsec does everything except.",
+    "options": {
+      "A": "Protect the payload and the headers",
+      "B": "Encrypt",
+      "C": "Work at the Data Link Layer",
+      "D": "Authenticate"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 178,
+    "question": "The following is an entry captured by a network IDS. You are assigned the task of analyzing this entry. You notice the value 0x90, which is the most common NOOP instruction for the Intel processor. You figure that the attacker is attempting a buffer overflow attack. You also notice \"/bin/sh\" in the ASCII part of the output. As an analyst what would you conclude about the attack?",
+    "options": {
+      "A": "The buffer overflow attack has been neutralized by the IDS",
+      "B": "The attacker is creating a directory on the compromised machine",
+      "C": "The attacker is attempting a buffer overflow attack and has succeeded",
+      "D": "The attacker is attempting an exploit that launches a command-line shell"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 179,
+    "question": "Steve, a scientist who works in a governmental security agency, developed a technological solution to identify people based on walking patterns and implemented this approach to a physical control access. A camera captures people walking and identifies the individuals using Steve’s approach. After that, people must approximate their RFID badges. Both the identifications are required to open the door. In this case, we can say:",
+    "options": {
+      "A": "Although the approach has two phases, it actually implements just one authentication factor",
+      "B": "The solution implements the two authentication factors: physical object and physical characteristic",
+      "C": "The solution will have a high level of false positives",
+      "D": "Biological motion cannot be used to identify people"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 180,
+    "question": "A regional bank hires your company to perform a security assessment on their network after a recent data breach. The attacker was able to steal financial data from the bank by compromising only a single server. Based on this information, what should be one of your key recommendations to the bank?",
+    "options": {
+      "A": "Place a front-end web server in a demilitarized zone that only handles external web traffic",
+      "B": "Require all employees to change their anti-virus program with a new one",
+      "C": "Move the financial data to another server on the same IP subnet",
+      "D": "Issue new certificates to the web servers from the root certificate authority"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 181,
+    "question": "Which of the following is the best countermeasure to encrypting ransomwares?",
+    "options": {
+      "A": "Use multiple antivirus softwares",
+      "B": "Pay a ransom",
+      "C": "Keep some generation of off-line backup",
+      "D": "Analyze the ransomware to get decryption key of encrypted data"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 182,
+    "question": "What does a firewall check to prevent particular ports and applications from getting packets into an organization?",
+    "options": {
+      "A": "Transport layer port numbers and application layer headers",
+      "B": "Presentation layer headers and the session layer port numbers",
+      "C": "Network layer headers and the session layer port numbers",
+      "D": "Application layer port numbers and the transport layer headers"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 183,
+    "question": "During the process of encryption and decryption, what keys are shared? During the process of encryption and decryption, what keys are shared?",
+    "options": {
+      "A": "Private keys",
+      "B": "User passwords",
+      "C": "Public keys",
+      "D": "Public and private keys"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 184,
+    "question": "Which of the following is a command line packet analyzer similar to GUI-based Wireshark?",
+    "options": {
+      "A": "nessus",
+      "B": "tcpdump",
+      "C": "ethereal",
+      "D": "jack the ripper"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 185,
+    "question": "While using your bank’s online servicing you notice the following string in the URL bar: “http: // www. MyPersonalBank. com/ account?id=368940911028389&Damount=10980&Camount=21” You observe that if you modify the Damount & Camount values and submit the request, that data on the web page reflects the changes. Which type of vulnerability is present on this site?",
+    "options": {
+      "A": "Cookie Tampering",
+      "B": "SQL Injection",
+      "C": "Web Parameter Tampering",
+      "D": "XSS Reflection"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 186,
+    "question": "Which method of password cracking takes the most time and effort?",
+    "options": {
+      "A": "Dictionary attack",
+      "B": "Shoulder surfing",
+      "C": "Rainbow tables",
+      "D": "Brute force"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 187,
+    "question": "Which of the following LM hashes represent a password of less than 8 characters? (Choose two.)",
+    "options": {
+      "A": "BA810DBA98995F1817306D272A9441BB",
+      "B": "44EFCE164AB921CQAAD3B435B51404EE",
+      "C": "0182BD0BD4444BF836077A718CCDF409",
+      "D": "CEC52EB9C8E3455DC2265B23734E0DAC",
+      "E": "B757BF5C0D87772FAAD3B435B51404EE",
+      "F": "E52CAC67419A9A224A3B108F3FA6CB6D"
+    },
+    "answer": "BE"
+  },
+  {
+    "id": 188,
+    "question": "A user on your Windows 2000 network has discovered that he can use L0phtcrack to sniff the SMB exchanges which carry user logons. The user is plugged into a hub with 23 other systems. However, he is unable to capture any logons though he knows that other users are logging in. What do you think is the most likely reason behind this?",
+    "options": {
+      "A": "There is a NIDS present on that segment.",
+      "B": "Kerberos is preventing it.",
+      "C": "Windows logons cannot be sniffed.",
+      "D": "L0phtcrack only sniffs logons to web servers."
+    },
+    "answer": "B"
+  },
+  {
+    "id": 189,
+    "question": "Yancey is a network security administrator for a large electric company. This company provides power for over 100, 000 people in Las Vegas. Yancey has worked for his company for over 15 years and has become very successful. One day, Yancey comes in to work and finds out that the company will be downsizing and he will be out of a job in two weeks. Yancey is very angry and decides to place logic bombs, viruses, Trojans, and backdoors all over the network to take down the company once he has left. Yancey does not care if his actions land him in jail for 30 or more years, he just wants the company to pay for what they are doing to him. What would Yancey be considered?",
+    "options": {
+      "A": "Yancey would be considered a Suicide Hacker",
+      "B": "Since he does not care about going to jail, he would be considered a Black Hat",
+      "C": "Because Yancey works for the company currently; he would be a White Hat",
+      "D": "Yancey is a Hacktivist Hacker since he is standing up to a company that is downsizing"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 190,
+    "question": "Which of the following steps for risk assessment methodology refers to vulnerability identification?",
+    "options": {
+      "A": "Determines if any flaws exist in systems, policies, or procedures",
+      "B": "Assigns values to risk probabilities; Impact values.",
+      "C": "Determines risk probability that vulnerability will be exploited (Hig",
+      "D": "Medium, Low)",
+      "E": "Identifies sources of harm to an IT syste",
+      "F": "(Natural, Huma",
+      "G": "Environmental)"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 191,
+    "question": "The tools which receive event logs from servers, network equipment, and applications, and perform analysis and correlation on those logs, and can generate alarms for security relevant issues, are known as what?",
+    "options": {
+      "A": "network Sniffer",
+      "B": "Vulnerability Scanner",
+      "C": "Intrusion prevention Server",
+      "D": "Security incident and event Monitoring"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 192,
+    "question": "What is the following command used for? net use \\targetipc$ \"\" /u:\"\"",
+    "options": {
+      "A": "Grabbing the etc/passwd file",
+      "B": "Grabbing the SAM",
+      "C": "Connecting to a Linux computer through Samba.",
+      "D": "This command is used to connect as a null session",
+      "E": "Enumeration of Cisco routers"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 193,
+    "question": "John the Ripper is a technical assessment tool used to test the weakness of which of the following?",
+    "options": {
+      "A": "Passwords",
+      "B": "File permissions",
+      "C": "Firewall rulesets",
+      "D": "Usernames"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 194,
+    "question": "During a black-box pen test you attempt to pass IRC traffic over port 80/TCP from a compromised web enabled host. The traffic gets blocked; however, outbound HTTP traffic is unimpeded. What type of firewall is inspecting outbound traffic?",
+    "options": {
+      "A": "Circuit",
+      "B": "Stateful",
+      "C": "Application",
+      "D": "Packet Filtering"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 195,
+    "question": "What term describes the amount of risk that remains after the vulnerabilities are classified and the countermeasures have been deployed?",
+    "options": {
+      "A": "Residual risk",
+      "B": "Impact risk",
+      "C": "Deferred risk",
+      "D": "Inherent risk"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 196,
+    "question": "Why is a penetration test considered to be more thorough than vulnerability scan?",
+    "options": {
+      "A": "Vulnerability scans only do host discovery and port scanning by default.",
+      "B": "A penetration test actively exploits vulnerabilities in the targeted infrastructure, while a vulnerability scan does not typically involve active exploitation.",
+      "C": "It is not – a penetration test is often performed by an automated tool, while a vulnerability scan requires active engagement.",
+      "D": "The tools used by penetration testers tend to have much more comprehensive vulnerability databases."
+    },
+    "answer": "B"
   }
 ]
