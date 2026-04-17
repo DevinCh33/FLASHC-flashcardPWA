@@ -1,29 +1,206 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Export Bank</title>
-<style>body{background:#0f0f1a;color:#eee;font-family:sans-serif;padding:24px;text-align:center;}
-.btn{padding:16px 32px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;color:#000;background:#64ffda;margin:8px;}
-.info{color:#8892b0;margin:16px 0;font-size:0.9rem;}</style></head>
-<body>
-<h1>📤 Export Question Bank</h1>
-<p class="info" id="info">Loading...</p>
-<button class="btn" onclick="exportBank()">💾 Download all-questions.json</button>
-<p class="info">Save this file to your project's <code>data/</code> folder, then git commit and push.</p>
-<script>
-const saved = localStorage.getItem('ceh-custom-questions');
-let questions = [];
-if (saved) { try { questions = JSON.parse(saved); } catch(e) {} }
-document.getElementById('info').textContent = '📦 Your bank has ' + questions.length + ' questions in localStorage.';
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Export / Debug — CEH Flashcards</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0f0f1a;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:16px;min-height:100vh;}
+h1{font-size:1.3rem;margin-bottom:4px;background:linear-gradient(135deg,#e94560,#0f3460);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sub{color:#8892b0;font-size:0.85rem;margin-bottom:20px;}
+a{color:#64ffda;}
+.card{background:#1a1a2e;border-radius:12px;padding:16px;margin-bottom:12px;}
+.card h2{font-size:0.9rem;color:#8892b0;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.stat{font-size:2rem;font-weight:700;color:#64ffda;}
+.stat-label{font-size:0.75rem;color:#8892b0;}
+.btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:0.9rem;font-weight:600;cursor:pointer;color:#fff;margin-bottom:8px;text-align:center;}
+.btn-green{background:linear-gradient(135deg,#64ffda,#00b894);color:#000;}
+.btn-blue{background:linear-gradient(135deg,#0f3460,#e94560);color:#fff;}
+.btn-red{background:rgba(255,107,107,0.15);color:#ff6b6b;border:1px solid rgba(255,107,107,0.3);}
+.btn-secondary{background:#1a1a2e;border:1px solid rgba(255,255,255,0.1);color:#eee;}
+.log{background:#111;border-radius:8px;padding:12px;font-family:monospace;font-size:0.75rem;color:#8892b0;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-all;margin-top:8px;}
+.keys-list{font-size:0.8rem;color:#8892b0;line-height:1.8;}
+.keys-list .key{color:#64ffda;cursor:pointer;text-decoration:underline;}
+.keys-list .size{color:#ffd93d;font-size:0.7rem;}
+</style></head><body>
 
-function exportBank() {
-  if (questions.length === 0) { alert('No questions in localStorage!'); return; }
-  // Re-number IDs cleanly
-  questions.forEach(function(q, i) { q.id = i + 1; });
-  const blob = new Blob([JSON.stringify(questions, null, 2)], {type: 'application/json'});
+<h1>📦 Question Bank Manager</h1>
+<p class="sub"><a href="index.html">← Back to app</a></p>
+
+<div class="card">
+  <h2>Current Bank</h2>
+  <div class="stat" id="bankCount">0</div>
+  <div class="stat-label">questions in localStorage (ceh-custom-questions)</div>
+</div>
+
+<div class="card">
+  <h2>Bundled File</h2>
+  <div class="stat" id="bundledCount">0</div>
+  <div class="stat-label">questions in data/all-questions.json (what syncs to phone)</div>
+</div>
+
+<div class="card">
+  <h2>Actions</h2>
+  <button class="btn btn-green" onclick="downloadBank()">💾 Download Bank as all-questions.json</button>
+  <button class="btn btn-blue" onclick="copyBundledToBank()">📥 Load bundled file into localStorage</button>
+  <button class="btn btn-secondary" onclick="mergeDownloadedFile()">📎 Merge a JSON file into bank</button>
+  <input type="file" id="mergeFileInput" accept=".json" style="display:none;">
+  <button class="btn btn-red" onclick="clearBank()">🗑️ Clear localStorage bank</button>
+</div>
+
+<div class="card">
+  <h2>localStorage Debug</h2>
+  <div class="keys-list" id="keysList"></div>
+  <div class="log" id="debugLog" style="display:none;"></div>
+</div>
+
+<script>
+// ===== LOAD STATS =====
+let bankQuestions = [];
+let bundledQuestions = [];
+
+async function loadStats() {
+  // localStorage bank
+  const saved = localStorage.getItem('ceh-custom-questions');
+  if (saved) {
+    try { bankQuestions = JSON.parse(saved); } catch(e) { bankQuestions = []; }
+  }
+  document.getElementById('bankCount').textContent = bankQuestions.length;
+
+  // Bundled file
+  try {
+    const resp = await fetch('data/all-questions.json');
+    bundledQuestions = await resp.json();
+  } catch(e) { bundledQuestions = []; }
+  document.getElementById('bundledCount').textContent = bundledQuestions.length;
+
+  // localStorage keys
+  showKeys();
+}
+
+function showKeys() {
+  const el = document.getElementById('keysList');
+  let html = '';
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const val = localStorage.getItem(key);
+    const size = (new Blob([val])).size;
+    const sizeStr = size > 1024 ? (size / 1024).toFixed(1) + ' KB' : size + ' B';
+    html += '<div><span class="key" onclick="showKeyValue(\'' + key + '\')">' + key + '</span> <span class="size">(' + sizeStr + ')</span></div>';
+  }
+  if (!html) html = '<div>localStorage is empty</div>';
+  el.innerHTML = html;
+}
+
+function showKeyValue(key) {
+  const val = localStorage.getItem(key);
+  const log = document.getElementById('debugLog');
+  log.style.display = 'block';
+  try {
+    const parsed = JSON.parse(val);
+    if (Array.isArray(parsed)) {
+      log.textContent = key + ' = Array[' + parsed.length + ']\n\nFirst item:\n' + JSON.stringify(parsed[0], null, 2) + '\n\nLast item:\n' + JSON.stringify(parsed[parsed.length-1], null, 2);
+    } else {
+      log.textContent = key + ' = ' + JSON.stringify(parsed, null, 2);
+    }
+  } catch(e) {
+    log.textContent = key + ' = ' + val.substring(0, 2000);
+  }
+}
+
+// ===== ACTIONS =====
+function downloadBank() {
+  if (bankQuestions.length === 0) {
+    alert('Bank is empty! Load the bundled file first, or merge a JSON file.');
+    return;
+  }
+  const clean = JSON.parse(JSON.stringify(bankQuestions));
+  clean.forEach(function(q, i) { q.id = i + 1; });
+  const blob = new Blob([JSON.stringify(clean, null, 2)], {type: 'application/json'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'all-questions.json';
   a.click();
   URL.revokeObjectURL(a.href);
 }
+
+async function copyBundledToBank() {
+  if (bundledQuestions.length === 0) {
+    alert('Bundled file is empty or failed to load.');
+    return;
+  }
+  if (bankQuestions.length > 0) {
+    if (!confirm('This will MERGE ' + bundledQuestions.length + ' bundled questions into your existing ' + bankQuestions.length + ' questions. Continue?')) return;
+    mergeInto(bundledQuestions);
+  } else {
+    bankQuestions = JSON.parse(JSON.stringify(bundledQuestions));
+    bankQuestions.forEach(function(q, i) { q.id = i + 1; });
+    localStorage.setItem('ceh-custom-questions', JSON.stringify(bankQuestions));
+  }
+  loadStats();
+  alert('Done! Bank now has ' + bankQuestions.length + ' questions.');
+}
+
+function mergeDownloadedFile() {
+  document.getElementById('mergeFileInput').click();
+}
+
+document.getElementById('mergeFileInput').addEventListener('change', function(e) {
+  if (!e.target.files.length) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const imported = JSON.parse(ev.target.result);
+      if (!Array.isArray(imported)) throw new Error('Not an array');
+      mergeInto(imported);
+      loadStats();
+      alert('Merged! Bank now has ' + bankQuestions.length + ' questions.');
+    } catch(err) {
+      alert('Error reading file: ' + err.message);
+    }
+  };
+  reader.readAsText(e.target.files[0]);
+  e.target.value = '';
+});
+
+function mergeInto(newQuestions) {
+  // Deduplicate by normalized question text
+  const existing = new Set();
+  bankQuestions.forEach(function(q) {
+    existing.add(normalize(q.question));
+  });
+
+  let added = 0;
+  let nextId = bankQuestions.length > 0 ? Math.max.apply(null, bankQuestions.map(function(q){return q.id;})) + 1 : 1;
+
+  newQuestions.forEach(function(q) {
+    const norm = normalize(q.question);
+    if (!existing.has(norm)) {
+      existing.add(norm);
+      q.id = nextId++;
+      bankQuestions.push(q);
+      added++;
+    }
+  });
+
+  // Re-number all IDs cleanly
+  bankQuestions.forEach(function(q, i) { q.id = i + 1; });
+  localStorage.setItem('ceh-custom-questions', JSON.stringify(bankQuestions));
+  console.log('Merged: +' + added + ' new, total: ' + bankQuestions.length);
+}
+
+function normalize(text) {
+  return (text || '').toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function clearBank() {
+  if (!confirm('Delete ALL questions from localStorage? This cannot be undone.')) return;
+  localStorage.removeItem('ceh-custom-questions');
+  localStorage.removeItem('ceh-progress');
+  bankQuestions = [];
+  loadStats();
+  alert('Bank cleared.');
+}
+
+loadStats();
 </script>
 </body></html>
