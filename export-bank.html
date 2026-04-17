@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Export Bank</title>
+<style>body{background:#0f0f1a;color:#eee;font-family:sans-serif;padding:24px;text-align:center;}
+.btn{padding:16px 32px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;color:#000;background:#64ffda;margin:8px;}
+.info{color:#8892b0;margin:16px 0;font-size:0.9rem;}</style></head>
+<body>
+<h1>📤 Export Question Bank</h1>
+<p class="info" id="info">Loading...</p>
+<button class="btn" onclick="exportBank()">💾 Download all-questions.json</button>
+<p class="info">Save this file to your project's <code>data/</code> folder, then git commit and push.</p>
+<script>
+const saved = localStorage.getItem('ceh-custom-questions');
+let questions = [];
+if (saved) { try { questions = JSON.parse(saved); } catch(e) {} }
+document.getElementById('info').textContent = '📦 Your bank has ' + questions.length + ' questions in localStorage.';
+
+function exportBank() {
+  if (questions.length === 0) { alert('No questions in localStorage!'); return; }
+  // Re-number IDs cleanly
+  questions.forEach(function(q, i) { q.id = i + 1; });
+  const blob = new Blob([JSON.stringify(questions, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'all-questions.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body></html>

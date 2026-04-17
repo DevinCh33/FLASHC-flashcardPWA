@@ -98,6 +98,19 @@ async function syncFromGitHub() {
   }
 }
 
+// ===== EXPORT =====
+function exportBankToFile() {
+  if (questions.length === 0) { alert('No questions to export!'); return; }
+  var exportData = JSON.parse(JSON.stringify(questions));
+  exportData.forEach(function(q, i) { q.id = i + 1; });
+  var blob = new Blob([JSON.stringify(exportData, null, 2)], {type: 'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'all-questions.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
 // ===== PERSISTENCE =====
 function saveProgress() {
   localStorage.setItem('ceh-progress', JSON.stringify(progress));

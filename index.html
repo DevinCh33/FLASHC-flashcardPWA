@@ -592,6 +592,13 @@
         </div>
         <div id="sync-status" style="font-size:0.75rem;color:var(--text-dim);"></div>
       </div>
+      <div class="settings-item" style="flex-direction:column;align-items:stretch;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <label>Export bank to file</label>
+          <button class="btn btn-small btn-secondary" onclick="exportBankToFile()" style="padding:8px 16px;">💾 Export JSON</button>
+        </div>
+        <div style="font-size:0.72rem;color:var(--text-dim);">Save to data/all-questions.json in your repo, then git push to sync with phone</div>
+      </div>
     </div>
 
     <div class="settings-section">
