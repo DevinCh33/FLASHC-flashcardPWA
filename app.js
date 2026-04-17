@@ -68,29 +68,21 @@ async function syncFromGitHub() {
       throw new Error('Empty or invalid question data');
     }
 
-    // Merge: keep local questions, add new ones from remote
-    const localIds = new Set(questions.map(q => normalizeForComparison(q.question)));
-    let added = 0;
-    let nextId = questions.length > 0 ? Math.max(...questions.map(q => q.id)) + 1 : 1;
+    // Replace local bank with remote — the repo file is the source of truth
+    // Re-number IDs cleanly
+    remoteQuestions.forEach(function(q, i) { q.id = i + 1; });
 
-    remoteQuestions.forEach(function(rq) {
-      const norm = normalizeForComparison(rq.question);
-      if (!localIds.has(norm)) {
-        rq.id = nextId++;
-        questions.push(rq);
-        localIds.add(norm);
-        added++;
-      }
-    });
-
-    // Save merged set
+    questions = remoteQuestions;
     localStorage.setItem('ceh-custom-questions', JSON.stringify(questions));
+
+    // Keep progress for questions that still exist (by normalized text)
+    // No need to wipe progress — IDs are stable if the file doesn't reorder
+
     document.getElementById('total-q').textContent = questions.length;
     updateStats();
     setTimeout(function() { findDuplicates(); }, 50);
 
-    if (statusEl) statusEl.textContent = 'Synced! +' + added + ' new (total: ' + questions.length + ')';
-    if (added === 0 && statusEl) statusEl.textContent = 'Up to date (' + questions.length + ' questions)';
+    if (statusEl) statusEl.textContent = 'Synced! ' + questions.length + ' questions loaded from GitHub.';
 
   } catch (err) {
     console.error('Sync failed:', err);
