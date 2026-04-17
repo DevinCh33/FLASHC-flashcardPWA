@@ -89,8 +89,8 @@
   </div>
 
   <div class="actions" id="actions" style="display: none;">
-    <button class="btn btn-secondary" onclick="downloadJSON()">💾 Download FULL Bank</button>
-    <button class="btn btn-green" onclick="saveToApp()">✅ Save to App</button>
+    <button class="btn btn-green" onclick="saveToApp()">✅ Save & Push</button>
+    <button class="btn btn-secondary" onclick="downloadJSON()">💾 Download</button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -408,6 +408,13 @@ function saveToApp() {
     if (data.ok) {
       log('✅ Written to data/all-questions.json (' + data.count + ' questions). Just git push to sync!', 'success');
     } else {
+      log('⚠️ Could not write to disk: ' + data.error + '. Use Download button instead.', 'warn');
+    }
+  }).catch(() => {
+    log('⚠️ Local server not running — file not saved to disk. Use "node server.js" or download manually.', 'warn');
+  });
+
+  log('Go to the <a href="index.html">flashcard app</a> to study!', 'success');
       log('⚠️ Could not write to disk: ' + data.error + '. Use Download button instead.', 'warn');
     }
   }).catch(() => {

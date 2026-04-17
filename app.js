@@ -90,6 +90,82 @@ async function syncFromGitHub() {
   }
 }
 
+// ===== PUSH TO GITHUB =====
+function getGitHubToken() {
+  return localStorage.getItem('ceh-github-token') || '';
+}
+
+function saveGitHubToken(token) {
+  localStorage.setItem('ceh-github-token', token.trim());
+}
+
+async function pushToGitHub() {
+  const statusEl = document.getElementById('sync-status');
+  var token = getGitHubToken();
+
+  if (!token) {
+    token = prompt('Enter your GitHub Personal Access Token:\n(Create one at github.com/settings/tokens with "repo" scope)');
+    if (!token) return;
+    saveGitHubToken(token);
+  }
+
+  if (questions.length === 0) {
+    if (statusEl) statusEl.textContent = 'Nothing to push — bank is empty.';
+    return;
+  }
+
+  if (statusEl) statusEl.textContent = 'Pushing ' + questions.length + ' questions to GitHub...';
+
+  try {
+    // Prepare the file content
+    var exportData = JSON.parse(JSON.stringify(questions));
+    exportData.forEach(function(q, i) { q.id = i + 1; });
+    var content = btoa(unescape(encodeURIComponent(JSON.stringify(exportData, null, 2))));
+
+    // Get current file SHA (needed for updates)
+    var apiUrl = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + SYNC_FILE;
+    var headers = { 'Authorization': 'token ' + token, 'Content-Type': 'application/json' };
+
+    var sha = '';
+    try {
+      var getResp = await fetch(apiUrl + '?ref=' + GITHUB_BRANCH, { headers: headers });
+      if (getResp.ok) {
+        var fileData = await getResp.json();
+        sha = fileData.sha;
+      }
+    } catch(e) { /* file might not exist yet, that's ok */ }
+
+    // Commit the file
+    var body = {
+      message: 'Update question bank (' + exportData.length + ' questions)',
+      content: content,
+      branch: GITHUB_BRANCH
+    };
+    if (sha) body.sha = sha;
+
+    var putResp = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: headers,
+      body: JSON.stringify(body)
+    });
+
+    if (!putResp.ok) {
+      var errData = await putResp.json();
+      if (putResp.status === 401) {
+        localStorage.removeItem('ceh-github-token');
+        throw new Error('Bad token — cleared. Try again.');
+      }
+      throw new Error(errData.message || 'HTTP ' + putResp.status);
+    }
+
+    if (statusEl) statusEl.textContent = '✅ Pushed ' + exportData.length + ' questions to GitHub!';
+
+  } catch (err) {
+    console.error('Push failed:', err);
+    if (statusEl) statusEl.textContent = 'Push failed: ' + err.message;
+  }
+}
+
 // ===== EXPORT =====
 function exportBankToFile() {
   if (questions.length === 0) { alert('No questions to export!'); return; }

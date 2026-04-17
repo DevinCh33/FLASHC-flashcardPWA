@@ -587,10 +587,15 @@
       <h2>Sync</h2>
       <div class="settings-item" style="flex-direction:column;align-items:stretch;gap:8px;">
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <label>Sync from GitHub</label>
-          <button class="btn btn-small btn-primary" onclick="syncFromGitHub()" style="padding:8px 16px;">🔄 Sync Now</button>
+          <label>Pull from GitHub</label>
+          <button class="btn btn-small btn-primary" onclick="syncFromGitHub()" style="padding:8px 16px;">⬇️ Pull</button>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <label>Push to GitHub</label>
+          <button class="btn btn-small btn-secondary" onclick="pushToGitHub()" style="padding:8px 16px;">⬆️ Push</button>
         </div>
         <div id="sync-status" style="font-size:0.75rem;color:var(--text-dim);"></div>
+        <div style="font-size:0.68rem;color:var(--text-dim);">Pull loads questions from repo. Push saves your bank to repo. Token stored in browser only.</div>
       </div>
       <div class="settings-item" style="flex-direction:column;align-items:stretch;gap:8px;">
         <div style="display:flex;justify-content:space-between;align-items:center;">
